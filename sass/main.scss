@@ -1,0 +1,214 @@
+/* 
+COLORS:
+
+Light green: #7ed56f,
+Medium green: #55c57a,
+Dark green: #28b485
+
+Red: #e54b22
+Bule: #abd1ff
+*/
+/* 变量定义 */
+// 主题色
+$color-primary-green: #55c57a; /* 绿色 */
+$color-primary-light: #7ed56f; /* 绿色 */
+$color-primary-dark: #28b485; /* 绿色 */
+
+// 额外颜色引入
+$color-primary-red: #e54b22; /* 红色 */
+$color-primary-blue: #abd1ff; /* 蓝色 */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+body {
+    padding: 3rem;
+    color: #777;
+    line-height: 1.7;
+
+    box-sizing: border-box;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgb($color-primary-red, 0.8),
+            rgb($color-primary-green, 0.8),
+            rgb($color-primary-blue, 0.8)),
+        url("../pic/images/手游视觉.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.header__logo {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    height: 11rem;
+}
+
+.header__textContainer {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary--main {
+    display: block;
+    font-family: "Zen Kurenaido";
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 6rem;
+    
+    /* 动画 */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary--sub {
+    display: block;
+    font-family: "Zen Kurenaido";
+    font-size: 3rem;
+    letter-spacing: 1.5rem;
+    margin-bottom: 6rem;
+    margin-right: 5rem; /* 不知道为什么没有对齐 */
+
+    /* 动画 */
+    animation-name: moveInRight;
+    animation-duration: 1s;
+}
+
+/* 左侧滑入动画 */
+@keyframes moveInLeft
+{
+    0%{
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+
+    80%{
+        transform: translateX(1rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 右侧滑入动画 */
+@keyframes moveInRight
+{
+    0%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+
+    80%{
+        transform: translateX(-1rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn:link,
+.btn:visited
+{
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    display: inline-block;
+    transition: all .2s;
+    letter-spacing: .2rem;
+    margin-right: 6rem;
+    position: relative;
+}
+
+.btn--white
+{
+    background-color: #fff;
+    color: #777;
+    font-size: 2rem;
+}
+
+.btn:hover
+{
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+}
+
+.btn:active
+{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
+}
+
+.btn--animted
+{
+    animation-name: moveInButton;
+    animation-duration: .4s;
+    animation-timing-function: ease-out;
+    animation-delay: .55s;
+    animation-fill-mode: backwards;
+}
+
+/* Button滑入动画 */
+@keyframes moveInButton
+{
+    0%{
+        opacity: 0;
+        transform: translateY(2.5rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn::after
+{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .35s;
+}
+
+.btn--white::after
+{
+    background-color: #fff;
+}
+
+.btn:hover::after
+{
+    transform: scaleX(1.5) scaleY(1.3);
+    opacity: 0;
+}
+
+

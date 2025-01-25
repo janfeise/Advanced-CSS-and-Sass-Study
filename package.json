@@ -1,0 +1,14 @@
+{
+  "name": "无职转生静态网页制作",
+  "version": "1.0.0",
+  "description": "css学习，并制作无职转生静态网站",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass ./sass/main.scss ./css/style.css"
+  },
+  "author": "Tilex",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.83.4"
+  }
+}
