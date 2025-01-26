@@ -1,0 +1,46 @@
+/* 左侧滑入动画 */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 右侧滑入动画 */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Button滑入动画 */
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

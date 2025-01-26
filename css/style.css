@@ -1,20 +1,13 @@
 @charset "UTF-8";
-/* 
-COLORS:
-
-Light green: #7ed56f,
-Medium green: #55c57a,
-Dark green: #28b485
-
-Red: #e54b22
-Bule: #abd1ff
-*/
 /* 变量定义 */
 /* 绿色 */
 /* 绿色 */
 /* 绿色 */
 /* 红色 */
 /* 蓝色 */
+/* 灰色 */
+/* 白色 */
+/* 黑色 */
 *,
 *::after,
 *::before {
@@ -32,55 +25,6 @@ body {
   color: #777;
   line-height: 1.7;
   box-sizing: border-box;
-}
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(229, 75, 34, 0.8), rgba(85, 197, 122, 0.8), rgba(171, 209, 255, 0.8)), url("../pic/images/手游视觉.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.header__logo {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-  height: 11rem;
-}
-
-.header__textContainer {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  color: #fff;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.heading-primary--main {
-  display: block;
-  font-family: "Zen Kurenaido";
-  font-size: 8rem;
-  font-weight: 400;
-  letter-spacing: 6rem;
-  /* 动画 */
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-family: "Zen Kurenaido";
-  font-size: 3rem;
-  letter-spacing: 1.5rem;
-  margin-bottom: 6rem;
-  margin-right: 5rem; /* 不知道为什么没有对齐 */
-  /* 动画 */
-  animation-name: moveInRight;
-  animation-duration: 1s;
 }
 
 /* 左侧滑入动画 */
@@ -111,42 +55,6 @@ body {
     transform: translateX(0);
   }
 }
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  display: inline-block;
-  transition: all 0.2s;
-  letter-spacing: 0.2rem;
-  margin-right: 6rem;
-  position: relative;
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-  font-size: 2rem;
-}
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-}
-
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-}
-
-.btn--animted {
-  animation-name: moveInButton;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-out;
-  animation-delay: 0.55s;
-  animation-fill-mode: backwards;
-}
-
 /* Button滑入动画 */
 @keyframes moveInButton {
   0% {
@@ -157,6 +65,89 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(229, 75, 34, 0.8), rgba(85, 197, 122, 0.8), rgba(171, 209, 255, 0.8)), url("../pic/images/手游视觉.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.header__logo {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  height: 11rem;
+}
+.header__textContainer {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary--main {
+  display: block;
+  font-family: "Zen Kurenaido";
+  font-size: 8rem;
+  font-weight: 400;
+  letter-spacing: 6rem;
+  /* 动画 */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+.heading-primary--sub {
+  display: block;
+  font-family: "Zen Kurenaido";
+  font-size: 3rem;
+  letter-spacing: 1.5rem;
+  margin-bottom: 6rem;
+  margin-right: 5rem; /* 不知道为什么没有对齐 */
+  /* 动画 */
+  animation-name: moveInRight;
+  animation-duration: 1s;
+}
+
+.btn:link, .btn:visited {
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  transition: all 0.2s;
+  letter-spacing: 0.2rem;
+  margin-right: 6rem;
+  position: relative;
+}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+  font-size: 2rem;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.3);
+  opacity: 0;
+}
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+.btn--animted {
+  animation-name: moveInButton;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.55s;
+  animation-fill-mode: backwards;
 }
 .btn::after {
   content: "";
@@ -169,15 +160,6 @@ body {
   top: 0;
   left: 0;
   transition: all 0.35s;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.3);
-  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

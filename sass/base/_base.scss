@@ -1,0 +1,21 @@
+@use "../abstracts" as a;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 3rem;
+  color: a.$color-grey-dark;
+  line-height: 1.7;
+
+  box-sizing: border-box;
+}
