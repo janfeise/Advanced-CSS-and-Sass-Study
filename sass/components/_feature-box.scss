@@ -1,0 +1,30 @@
+@use "../abstracts/" as a;
+
+.feature-box {
+  font-size: 1.5rem;
+  padding: 3rem;
+  background-color: rgba($color: a.$color-white, $alpha: 0.8);
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 .5rem 1rem rgba($color: a.$color-black, $alpha: .3);
+  transition: all .2s;
+
+  &__icon {
+    font-size: 6rem;
+    display: inline-block;
+
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to bottom, a.$color-iconfonts-purple, a.$color-iconfonts-blue);
+  }
+
+  &__text {
+    height: 15rem;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+    box-shadow: 0 1rem 2em rgba($color: a.$color-black, $alpha: .4);
+  }
+}
