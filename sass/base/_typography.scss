@@ -1,65 +1,66 @@
 @use "../abstracts/" as a;
 
 .heading-primary {
-    &--main {
-      display: block;
-      font-family: "Zen Kurenaido";
-      font-size: 8rem;
-      font-weight: 400;
-      letter-spacing: 6rem;
-  
-      /* 动画 */
-      animation-name: moveInLeft;
-      animation-duration: 1s;
-      animation-timing-function: ease-out;
-    }
-  
-    &--sub {
-      display: block;
-      font-family: "Zen Kurenaido";
-      font-size: 3rem;
-      letter-spacing: 1.5rem;
-      margin-bottom: 6rem;
-      margin-right: 5rem; /* 不知道为什么没有对齐 */
-  
-      /* 动画 */
-      animation-name: moveInRight;
-      animation-duration: 1s;
-    }
+  &--main {
+    display: block;
+    font-family: "Zen Kurenaido";
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 6rem;
+
+    /* 动画 */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
   }
 
-.heading-secondary{
-    display: inline-block;
-    font-size: 3.3rem;
-    letter-spacing: 0.5rem;
-    background-image: linear-gradient(to right, a.$color-rudy-yellow, a.$color-alice-red);
-    background-clip: text;
-    color: transparent;
-    position: relative;
-    z-index: 1;
+  &--sub {
+    display: block;
+    font-family: "Zen Kurenaido";
+    font-size: 3rem;
+    letter-spacing: 1.5rem;
+    margin-bottom: 6rem;
+    margin-right: 5rem; /* 不知道为什么没有对齐 */
 
-    &:hover {
-      cursor: default;
-      transition: all .2s;
-
-      transform: skewY(2deg) skewX(15deg) scale(1.1);
-      text-shadow: .5rem 1rem 1.5rem rgba(a.$color-black, $alpha: .13);
-    }
+    /* 动画 */
+    animation-name: moveInRight;
+    animation-duration: 1s;
+  }
 }
 
-.heading-tertiary
-{
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.3rem;
+  letter-spacing: 0.5rem;
+  background-image: linear-gradient(
+    to right,
+    a.$color-rudy-yellow,
+    a.$color-alice-red
+  );
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    cursor: default;
+    transition: all 0.2s;
+
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 1.5rem rgba(a.$color-black, $alpha: 0.13);
+  }
+}
+
+.heading-tertiary {
   font-size: a.$default-font-size;
   font-weight: 700;
-  letter-spacing: .7rem;
+  letter-spacing: 0.7rem;
 }
 
-.paragraphy
-{
+.paragraphy {
   font-size: a.$default-font-size;
 
-  &:not(:last-child)
-  {
+  &:not(:last-child) {
     margin-bottom: 2rem;
   }
 }

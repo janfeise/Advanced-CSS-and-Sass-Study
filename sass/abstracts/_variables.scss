@@ -5,22 +5,23 @@ $color-primary-light: #7ed56f; /* 绿色 */
 $color-primary-dark: #28b485; /* 绿色 */
 
 // 艾莉丝主题色系
-$color-alice-red: #D8434E; /* 红色 */
-$color-alice-light: #FF6B6B;
-$color-alice-dark: #AD2A2A;
+$color-alice-red: #d8434e; /* 红色 */
+$color-alice-light: #ff6b6b;
+$color-alice-dark: #ad2a2a;
 
 // 洛琪希主题色系
-$color-rokhi-blue: #3B9AB2    ; /* 蓝色 */
-$color-rokhi-light: #6EC1E3;
-$color-rokhi-dark: #2C5F7A; 
+$color-rokhi-blue: #6a94d4; /* 蓝色 */
+$color-rokhi-light: #6ec1e3;
+$color-rokhi-dark: #6b79b3;
 
 // 鲁迪乌斯主题色系
-$color-rudy-yellow: #f6c445;  /* 黄色 */
-$color-rudy-light: #FFD700;
-$color-rudy-dark: #B8860B;
+$color-rudy-yellow: #f6c445; /* 黄色 */
+$color-rudy-light: #ffd700;
+$color-rudy-dark: #b8860b;
 
 // 灰色
-$color-grey: #f7f7f7;
+$color-grey-light: #f7f7f7;
+$color-grey: #eee;
 $color-grey-dark: #777;
 
 $color-white: #fff; /* 白色 */
@@ -32,6 +33,7 @@ $color-iconfonts-blue: #1e90ff;
 
 // 字体
 $default-font-size: 1.6rem; /* 16px */
+$font-TC: "LXGW WenKai Mono TC", serif;
 
 /* 数值 */
 $gird-width: 114rem;

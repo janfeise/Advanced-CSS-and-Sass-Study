@@ -9,7 +9,6 @@
     display: inline-block;
     transition: all 0.2s;
     letter-spacing: 0.2rem;
-    margin-right: 6rem;
     position: relative;
   }
 
@@ -81,6 +80,6 @@
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 .5rem 1rem rgba($color: a.$color-black, $alpha: 0.15); 
+    box-shadow: 0 0.5rem 1rem rgba($color: a.$color-black, $alpha: 0.15);
   }
 }

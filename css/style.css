@@ -99,7 +99,7 @@ body:hover {
   display: inline-block;
   font-size: 3.3rem;
   letter-spacing: 0.5rem;
-  background-image: linear-gradient(to right, #f6c445, #D8434E);
+  background-image: linear-gradient(to right, #f6c445, #d8434e);
   background-clip: text;
   color: transparent;
   position: relative;
@@ -143,7 +143,7 @@ body:hover {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(216, 67, 78, 0.8), rgba(85, 197, 122, 0.8), rgba(44, 95, 122, 0.8)), url("../pic/images/手游视觉.png");
+  background-image: linear-gradient(to right bottom, rgba(216, 67, 78, 0.8), rgba(85, 197, 122, 0.8), rgba(107, 121, 179, 0.8)), url("../pic/images/手游视觉.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -208,7 +208,6 @@ body:hover {
   display: inline-block;
   transition: all 0.2s;
   letter-spacing: 0.2rem;
-  margin-right: 6rem;
   position: relative;
 }
 .btn--white {
@@ -255,14 +254,14 @@ body:hover {
   display: inline-block;
   font-size: 1.6rem;
   text-decoration: none;
-  color: #D8434E;
-  border-bottom: 1px solid #D8434E;
+  color: #d8434e;
+  border-bottom: 1px solid #d8434e;
   padding: 4px;
   transition: all 0.2s;
 }
 .btn-text:hover {
   color: #fff;
-  background-color: #D8434E;
+  background-color: #d8434e;
   transform: translateY(-2px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
@@ -300,7 +299,7 @@ body:hover {
   cursor: pointer;
   transform: scale(1.1) translateY(-0.5rem);
   box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
-  outline: 1rem solid #D8434E;
+  outline: 1rem solid #d8434e;
 }
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.9);
@@ -332,15 +331,18 @@ body:hover {
 }
 
 .card {
+  /* 图片翻转 */
   width: 100%;
-  height: 50rem;
+  height: 51rem;
   position: relative;
   perspective: 150rem;
+  /* front图片的样式设置 */
 }
 .card__side {
   border-radius: 3px;
+  overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  height: 50rem;
+  height: 51rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -349,20 +351,122 @@ body:hover {
   transition: all 0.8s ease;
 }
 .card__side--front {
-  background-color: orangered;
+  background-color: white;
 }
 .card__side--back {
   background-color: green;
   transform: rotateY(180deg);
 }
 .card__side--back-1 {
-  background-image: linear-gradient(to right bottom, #FF6B6B, #AD2A2A);
+  background-image: linear-gradient(to right bottom, #ff6b6b, #ad2a2a);
+}
+.card__side--back-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card__side--back-3 {
+  background-image: linear-gradient(to right bottom, #6ec1e3, #6b79b3);
 }
 .card:hover .card__side--front {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .card:hover .card__side--back {
   transform: rotateY(0);
+}
+.card__picture {
+  width: 100%;
+  height: 23rem;
+  background-size: cover;
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #ff6b6b, #ad2a2a), url("../../pic/images/艾莉丝/艾莉丝-2.jpg");
+  transform: scaleX(-1); /* 添加镜像翻转 */
+}
+.card__picture--2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../../pic/images/希露菲-3.jpg");
+  transform: scaleX(-1) scale(1.1); /* 添加镜像翻转 */
+}
+.card__picture--3 {
+  background-image: linear-gradient(to right bottom, #6ec1e3, #6b79b3), url("../../pic/images/洛琪希.jpg");
+  transform: scaleX(-1); /* 添加镜像翻转 */
+}
+.card__heading {
+  width: 75%;
+  text-align: right;
+  font-size: 2.5rem;
+  color: #fff;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+}
+.card__heading-span {
+  font-family: "LXGW WenKai Mono TC", serif;
+  padding: 1rem 1.5rem;
+  -webkibox-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 107, 107, 0.85), rgba(173, 42, 42, 0.85));
+}
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85));
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(110, 193, 227, 0.85), rgba(107, 121, 179, 0.85));
+}
+.card__listText {
+  padding: 1rem;
+}
+.card__listText ul {
+  list-style-type: none;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+}
+.card__listText ul li {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__listText ul li:not(:last-child) {
+  border-bottom: 0.2rem solid #eee;
+}
+.card__back-box {
+  width: 90%;
+  text-align: center;
+  font-family: "LXGW WenKai Mono TC", serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card__back-content {
+  font-size: 2.3rem;
+  font-weight: 100;
+  letter-spacing: 1.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10rem;
+}
+.card__back-content::first-line {
+  font-size: 3rem;
+  line-height: 1.8;
+}
+.card__action {
+  transition: all 0.3s ease-in;
+}
+.card__action:hover .card__action-text {
+  background-clip: text;
+  color: transparent;
+}
+.card__action:hover .card__action-text-1 {
+  background-image: linear-gradient(to right, #ff6b6b, #ad2a2a);
+}
+.card__action:hover .card__action-text-2 {
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+}
+.card__action:hover .card__action-text-3 {
+  background-image: linear-gradient(to right, #8a2be2, #1e90ff);
 }
 
 .section--about {
@@ -373,7 +477,7 @@ body:hover {
 
 .section--feature {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(110, 193, 227, 0.8), rgba(44, 95, 122, 0.8)), url("../../pic/images/魔大陆-夜晚.png");
+  background-image: linear-gradient(to right bottom, rgba(110, 193, 227, 0.8), rgba(107, 121, 179, 0.8)), url("../../pic/images/魔大陆-夜晚.png");
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -9rem;

@@ -1,15 +1,17 @@
 @use "../abstracts/" as a;
 
 .card {
+  /* 图片翻转 */
   width: 100%;
-  height: 50rem;
+  height: 51rem;
   position: relative;
   perspective: 150rem;
 
   &__side {
     border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba($color: a.$color-black, $alpha: .15);
-    height: 50rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color: a.$color-black, $alpha: 0.15);
+    height: 51rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +20,7 @@
     transition: all 0.8s ease;
 
     &--front {
-      background-color: orangered;
+      background-color: white;
     }
 
     &--back {
@@ -26,16 +28,192 @@
       transform: rotateY(180deg);
 
       &-1 {
-        background-image: linear-gradient(to right bottom, a.$color-alice-light, a.$color-alice-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          a.$color-alice-light,
+          a.$color-alice-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          a.$color-primary-light,
+          a.$color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          a.$color-rokhi-light,
+          a.$color-rokhi-dark
+        );
       }
     }
   }
 
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
+  }
+
+  /* front图片的样式设置 */
+  &__picture {
+    width: 100%;
+    height: 23rem;
+    background-size: cover;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          a.$color-alice-light,
+          a.$color-alice-dark
+        ),
+        url("../../pic/images/艾莉丝/艾莉丝-2.jpg");
+      transform: scaleX(-1); /* 添加镜像翻转 */
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          a.$color-primary-light,
+          a.$color-primary-dark
+        ),
+        url("../../pic/images/希露菲-3.jpg");
+      transform: scaleX(-1) scale(1.1); /* 添加镜像翻转 */
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          a.$color-rokhi-light,
+          a.$color-rokhi-dark
+        ),
+        url("../../pic/images/洛琪希.jpg");
+      transform: scaleX(-1); /* 添加镜像翻转 */
+    }
+  }
+
+  &__heading {
+    width: 75%;
+    text-align: right;
+    font-size: 2.5rem;
+    color: a.$color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+  }
+
+  &__heading-span {
+    font-family: a.$font-TC;
+    padding: 1rem 1.5rem;
+    -webkibox-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(a.$color-alice-light, 0.85),
+        rgba(a.$color-alice-dark, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(a.$color-primary-light, 0.85),
+        rgba(a.$color-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(a.$color-rokhi-light, 0.85),
+        rgba(a.$color-rokhi-dark, 0.85)
+      );
+    }
+  }
+
+  &__listText {
+    padding: 1rem;
+
+    ul {
+      list-style-type: none;
+      width: 75%;
+      text-align: center;
+      margin: 0 auto;
+
+      li {
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 0.2rem solid a.$color-grey;
+        }
+      }
+    }
+  }
+
+  &__back-box {
+    width: 90%;
+    text-align: center;
+    font-family: a.$font-TC;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__back-content {
+    font-size: 2.3rem;
+    font-weight: 100;
+    letter-spacing: 1.5rem;
+    text-align: center;
+    color: a.$color-white;
+    margin-bottom: 10rem;
+
+    &::first-line {
+      font-size: 3rem;
+      line-height: 1.8;
+    }
+  }
+  &__action {
+    transition: all 0.3s ease-in;
+
+    &:hover &-text {
+      background-clip: text;
+      color: transparent;
+    }
+
+    &:hover &-text-1 {
+      background-image: linear-gradient(
+        to right,
+        a.$color-alice-light,
+        a.$color-alice-dark
+      );
+    }
+
+    &:hover &-text-2 {
+      background-image: linear-gradient(
+        to right,
+        a.$color-primary-light,
+        a.$color-primary-dark
+      );
+    }
+
+    &:hover &-text-3 {
+      background-image: linear-gradient(
+        to right,
+        a.$color-iconfonts-purple,
+        a.$color-iconfonts-blue
+      );
+    }
   }
 }
