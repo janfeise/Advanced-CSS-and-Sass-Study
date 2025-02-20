@@ -1,0 +1,7 @@
+@use "../abstracts/" as a;
+
+.linear-gradient__text {
+  &--gold {
+    color: a.$color-rudy-light;
+  }
+}

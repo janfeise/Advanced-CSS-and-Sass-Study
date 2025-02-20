@@ -1,0 +1,164 @@
+@use "../abstracts/" as a;
+
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    background-color: a.$color-white;
+    border-radius: 50%;
+    z-index: 2000;
+    width: 7rem;
+    height: 7rem;
+    box-shadow: 0rem 1rem 2rem rgba($color: a.$color-black, $alpha: 0.2);
+  }
+
+  &__background {
+    width: 6rem;
+    height: 6rem;
+    background-image: radial-gradient(
+      a.$color-primary-light,
+      a.$color-primary-dark
+    );
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 1000;
+    transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    // transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(68);
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  &__list {
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__item {
+    width: 100%;
+    text-align: left;
+    display: block;
+    margin: 2rem;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:active {
+      display: inline-block;
+      list-style: none;
+      color: a.$color-white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      background-image: linear-gradient(120deg, transparent 50%, white 50%);
+      background-size: 230%;
+      transition: all 0.5s;
+
+      span {
+        margin-right: 2rem;
+      }
+    }
+
+    &:hover {
+      color: a.$color-primary-green;
+      background-position: 100%;
+      transform: translateX(1rem);
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 3.2rem;
+    height: 2px;
+    background-color: a.$color-black;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: a.$color-black;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+
+    &::after {
+      top: 1rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1.2rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1.2rem;
+  }
+
+  &__checkbox:checked ~ &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked ~ &__button &__icon::before {
+    top: 0;
+    left: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__checkbox:checked ~ &__button &__icon::after {
+    top: 0;
+    left: 0;
+    transform: rotate(135deg);
+  }
+
+  // 点击导航栏item时：关闭背景，跳转到对应的位置
+  &__link:target ~ &__background {
+    transform: scale(0);
+  }
+
+  &__link:target ~ &__nav {
+    opacity: 0;
+    width: 0;
+  }
+}

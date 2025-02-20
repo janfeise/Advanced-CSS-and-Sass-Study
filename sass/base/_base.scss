@@ -10,16 +10,50 @@
 
 html {
   font-size: 62.5%;
+  /** 
+  * 默认情况下 
+  * font-size: 100%  为 16px
+  * font-size: 62.5% 为 10px，作用是：1rem = 10px
+  * 示例：
+  *     - padding: 4rem; 即40px
+  */
+  @include a.respond(tab-land) {
+    /* 竖屏平板：width < 1200px */
+    /* 竖屏平板：1rem = 9px */
+    font-size: 56.25%;
+  }
+
+  @include a.respond(tab-port) {
+    /* 横屏平板： width < 900px */
+    /* 横屏平板：1rem = 8px */
+    font-size: 50%;
+  }
+
+  @include a.respond(phone) {
+    /* 手机：width < 600px */
+    /* 手机：1rem = 4.8px */
+    font-size: 30%;
+  }
+
+  @include a.respond(big-desktop) {
+    /* 大尺寸：width > 1800 */
+    /* 大尺寸：1rem = 12px */
+    font-size: 75%;
+  }
 }
 
 body {
-  padding: 3rem;
   color: a.$color-grey-dark;
   line-height: 1.7;
 
   box-sizing: border-box;
-  
-  &:hover{
+  padding: 3rem;
+
+  @include a.respond(tab-port) {
+    padding: 0;
+  }
+
+  &:hover {
     cursor: default;
   }
 }

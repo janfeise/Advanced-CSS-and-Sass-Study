@@ -1,16 +1,24 @@
+@use "abstracts";
+
 @use "base/base";
 @use "base/animations";
 @use "base/typography.scss";
 @use "base/utilities";
 
-@use "abstracts";
-
-@use "layout/header";
-@use "layout/grid";
-
+@use "components/bg-video";
 @use "components/button";
+@use "components/card";
 @use "components/compositon";
 @use "components/feature-box";
-@use "components/card";
+@use "components/feedback";
+@use "components/form";
+@use "components/linear-gradient__text";
+@use "components/popup";
+@use "components/story";
+
+@use "layout/footer";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/navigation";
 
 @use "pages/home";

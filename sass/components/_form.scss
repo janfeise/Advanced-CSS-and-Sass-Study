@@ -1,0 +1,107 @@
+@use "../abstracts/" as a;
+
+.form {
+  &__group {
+    font-size: a.$default-font-size;
+  }
+
+  &__input {
+    border-style: none;
+    width: 90%;
+    height: 4rem;
+    padding: 1rem;
+    font-size: inherit;
+    background-color: rgba($color: a.$color-white, $alpha: 0.9) 5;
+    display: block;
+    border-radius: 2px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color: a.$color-black, $alpha: 0.15);
+
+      border-bottom: 3px solid a.$color-primary-dark;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid a.$color-alice-red;
+    }
+
+    &:-webkit-autofill {
+      background-color: inherit;
+    }
+
+    &:autofill {
+      background-color: inherit;
+    }
+
+    &:is(:-webkit-autofill, :autofill) {
+      background-color: white !important;
+    }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    padding: 1rem;
+    display: block;
+    transition: all 0.3s;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__input:focus + &__label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  &__radio-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-block;
+    border: 5px solid a.$color-primary-green;
+    position: absolute;
+    left: 0;
+
+    &::after {
+      content: "";
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      background-color: a.$color-primary-green;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+}

@@ -1,8 +1,10 @@
 @use "../abstracts/" as a;
 
 .btn {
+  &,
   &:link,
   &:visited {
+    border-style: none;
     text-decoration: none;
     padding: 1.5rem 4rem;
     border-radius: 10rem;
@@ -19,6 +21,28 @@
 
     &::after {
       background-color: a.$color-white;
+    }
+  }
+
+  &--green {
+    background-color: a.$color-primary-green;
+    color: a.$color-white;
+    font-size: 2rem;
+    font-family: a.$font-TC;
+
+    &::after {
+      background-color: a.$color-primary-green;
+    }
+  }
+
+  &--blue {
+    background-color: a.$color-rokhi-blue;
+    color: a.$color-white;
+    font-size: 2rem;
+    font-family: a.$font-TC;
+
+    &::after {
+      background-color: a.$color-rokhi-blue;
     }
   }
 
@@ -65,15 +89,11 @@
     display: inline-block;
     font-size: a.$default-font-size;
     text-decoration: none;
-    color: a.$color-alice-red;
-    border-bottom: 1px solid a.$color-alice-red;
     padding: 4px;
     transition: all 0.2s;
   }
 
   &:hover {
-    color: a.$color-white;
-    background-color: a.$color-alice-red;
     transform: translateY(-2px);
     box-shadow: 0 1rem 2rem rgba($color: a.$color-black, $alpha: 0.15);
   }
@@ -81,5 +101,42 @@
   &:active {
     transform: translateY(0);
     box-shadow: 0 0.5rem 1rem rgba($color: a.$color-black, $alpha: 0.15);
+  }
+
+  &--alice {
+    color: a.$color-alice-red;
+    border-bottom: 1px solid a.$color-alice-red;
+  }
+
+  &--alice:hover {
+    color: a.$color-white;
+    background-color: a.$color-alice-red;
+  }
+
+  &--green {
+    color: a.$color-primary-green;
+    border-bottom: 1px solid a.$color-primary-green;
+  }
+
+  &--green:hover {
+    padding: 1rem;
+    color: a.$color-white;
+    background-color: a.$color-primary-dark;
+  }
+
+  &--Orsted {
+    padding: 1rem;
+    color: a.$color-rudy-yellow;
+    border-bottom: 1px solid a.$color-rudy-light;
+  }
+
+  &--Orsted:hover {
+    color: a.$color-white;
+    background-color: a.$color-rudy-yellow;
+  }
+
+  &:link,
+  &:visited &--OP-font-size {
+    font-size: 2rem;
   }
 }

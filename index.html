@@ -28,7 +28,42 @@
   </head>
 
   <body>
-    <header class="header">
+    <div class="navigation">
+      <input type="checkbox" id="nav-toggle" class="navigation__checkbox" />
+      <label for="nav-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background"></div>
+
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#header" class="navigation__link"
+              ><span>01</span>ABUOUT NATOURS</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>02</span>YOUR BENEFITS</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>03</span>POPULAR TOURS</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>04</span>STORIES</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>05</span>BOOK NOW</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="header" id="header">
       <div class="logoContainer">
         <img src="./pic/images/手游logo.png" alt="logo" class="header__logo" />
       </div>
@@ -36,7 +71,7 @@
       <div class="header__textContainer">
         <span class="heading-primary--main">無職轉生</span>
         <span class="heading-primary--sub">到了異世界就拿出真本事</span>
-        <a href="#" class="btn btn--white btn--animted">異世界への旅</a>
+        <a href="#card" class="btn btn--white btn--animted">異世界への旅</a>
       </div>
     </header>
 
@@ -62,7 +97,7 @@
 
             <p class="paragraphy">总之,</p>
 
-            <a href="#" class="btn-text">练剑，爽 &rarr;</a>
+            <a href="#" class="btn-text btn-text--alice">练剑，爽 &rarr;</a>
           </div>
 
           <div class="col-1-of-2">
@@ -135,7 +170,7 @@
         </div>
       </section>
 
-      <section class="section--detail">
+      <section class="section--detail" id="card">
         <div class="u-center-text u-margin-bottom-large">
           <h2 class="heading-secondary">鲁迪乌斯·一夫一妻一神·格雷拉特</h2>
         </div>
@@ -163,11 +198,11 @@
               <div class="card__side card__side--back card__side--back-1">
                 <div class="card__back-box">
                   <div>
-                    <p class="card__back-content">
+                    <p class="card__back-content u-margin-bottom-huge">
                       剑之圣地<br />今天也是一片安宁
                     </p>
                   </div>
-                  <a href="#" class="btn btn--white card__action">
+                  <a href="#popup" class="btn btn--white card__action">
                     <p class="card__action-text card__action-text-1">
                       练剑，爽&rarr;
                     </p>
@@ -198,9 +233,11 @@
               <div class="card__side card__side--back card__side--back-2">
                 <div class="card__back-box">
                   <div>
-                    <p class="card__back-content">伟大<br />无需多言</p>
+                    <p class="card__back-content u-margin-bottom-huge">
+                      伟大<br />无需多言
+                    </p>
                   </div>
-                  <a href="#" class="btn btn--white card__action">
+                  <a href="#popup" class="btn btn--white card__action">
                     <p class="card__action-text card__action-text-2">
                       布耶纳村&rarr;
                     </p>
@@ -231,11 +268,11 @@
               <div class="card__side card__side--back card__side--back-3">
                 <div class="card__back-box">
                   <div>
-                    <p class="card__back-content">
+                    <p class="card__back-content u-margin-bottom-huge">
                       啊雨啊<br />冲垮一切 驱逐世间万物吧
                     </p>
                   </div>
-                  <a href="#" class="btn btn--white card__action"
+                  <a href="#popup" class="btn btn--white card__action"
                     ><p class="card__action-text card__action-text-3">
                       豪雷积雨云&rarr;
                     </p></a
@@ -245,8 +282,227 @@
             </div>
           </div>
         </div>
+
+        <div class="u-center-text u-margin-top-huge">
+          <a href="#" class="btn btn--green">迷宫探险&rarr;</a>
+        </div>
+      </section>
+
+      <section class="section--stories">
+        <div class="bg-video">
+          <video class="bg-video__content" autoplay muted loop>
+            <source src="./video/第二季OP【无字幕】.mp4" />
+            浏览器不支持该类型的视频
+          </video>
+        </div>
+        <div class="u-center-text u-margin-bottom-large">
+          <h2 class="heading-secondary heading-secondary--large-letter-spacing">
+            龙神魔力有限公司
+          </h2>
+        </div>
+
+        <div class="u-margin-bottom-large">
+          <div class="story">
+            <figure class="story__shape">
+              <img
+                src="./pic/images/龙神.jpg"
+                alt="龙神奥尔斯帝德（Orsted）"
+                class="story__img story__img--Orsted"
+              />
+              <figcaption class="story__caption story__caption--Orsted">
+                <p>龙神<br />奥尔斯帝德</p>
+              </figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                <span class="u-default-letter-spacing">boss</span>：奥尔斯帝德
+              </h3>
+              <p>
+                龙神身披银甲，金瞳中流转着跨越千年的轮回之焰。作为初代龙神的转生者，他背负着与人神对抗的永恒宿命，在无数次的轮回中独自咀嚼孤独的重量。他的力量足以碾碎大陆，却始终被困在因果的牢笼里；他洞悉世间一切魔法与武技，却在与人心的距离中永远隔着一道冰冷的结界。当他凝视主角鲁迪乌斯时，目光里既有审视棋子的漠然，又暗藏着一丝对"变数"的灼热期待——这位行走于人间的神明，既是毁灭的具象，亦是救赎的火种，在永劫的螺旋中撕开命运的裂缝。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="u-margin-bottom-large">
+          <div class="story">
+            <figure class="story__shape">
+              <img
+                src="./pic/images/鲁迪.jpg"
+                alt="鲁迪乌斯·格雷拉特）"
+                class="story__img story__img--rudy"
+              />
+              <figcaption class="story__caption story__caption--rudy">
+                <p>鲁迪乌斯<br />格雷拉特</p>
+              </figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                <span class="u-default-letter-spacing">核心员工</span>：鲁迪乌斯
+              </h3>
+              <p>
+                曙光初现，他深邃如星辰的眸子中闪烁着重生火种，凝结着前尘悔恨与未来希冀。作为历经沉沦后重归凡尘的再生者，鲁迪乌斯背负着破碎梦境与魔法奥义的使命，在试炼年轮中独自品味命运甘苦；他的魔剑能斩苍穹，却始终受过去枷锁束缚；他精通秘法，却在情感纷扰中徘徊于孤独与真我之间。当他凝望未知命途时，眼中有对挑战从容的沉静，也藏着改写宿命的热切期待——这位行走于光影交错境的魔法师，既是毁灭旧世界的预兆，亦是开新纪元的火种，在轮回中刻写着他的传奇。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text">
+          <a href="#" class="btn-text btn-text--green btn-text--OP-font-size"
+            >第二季OP &rarr;</a
+          >
+        </div>
+      </section>
+
+      <section class="section__feedback-login">
+        <div class="row">
+          <div class="feedback__bg">
+            <div class="feedback__login-box">
+              <div class="u-center-text u-margin-bottom-med">
+                <h2
+                  class="heading-secondary heading-secondary--green heading-secondary--large-letter-spacing"
+                >
+                  德路迪亚村
+                </h2>
+              </div>
+              <form action="#">
+                <div class="form__group">
+                  <input
+                    id="name"
+                    type="text"
+                    width="100%"
+                    placeholder="昵称"
+                    required
+                    class="form__input"
+                  />
+                  <label for="name" class="form__label">昵称</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="邮箱"
+                    required
+                    class="form__input"
+                  />
+                  <label for="email" class="form__label">邮箱</label>
+                </div>
+
+                <div class="form__group u-margin-bottom-med">
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      name="size"
+                      class="form__radio-input"
+                      id="small"
+                      checked
+                    />
+                    <label for="small" class="form__radio-label">
+                      <span class="form__radio-button"></span>
+                      Small tour Group</label
+                    >
+                  </div>
+
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      name="size"
+                      class="form__radio-input"
+                      id="large"
+                    />
+                    <label for="large" class="form__radio-label">
+                      <span class="form__radio-button"></span>
+                      Large tour Group</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form__group">
+                  <button class="btn btn--green">NEXT STEP &rarr;</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer__log-box u-margin-bottom-med">
+        <img src="./pic/images/手游logo.png" alt="logo" class="footer__log" />
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#" class="footer__link">Company</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Contact</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Carrers</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Privacy policy</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <p class="footer__copyright">
+            Built my JONAS SCHMEDTMANN for his online course ADVANCED CSS AND
+            SASS. Copyright @ by Jonas Schmedtmann. You are 100% allowed to use
+            this webpage for both personal and commercial use, but NOT to claim
+            it as your own design.A credit to the originalathr,Jnachedtma,isf
+            coursehighlyareate
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <a href="#card" class="popup__close">&times;</a>
+        <div class="popup__left">
+          <img
+            src="./pic/images/艾莉丝/艾莉丝-2.jpg"
+            alt="艾莉丝"
+            class="popup__image"
+          />
+          <img
+            src="./pic/images/艾莉丝/艾莉丝-2.jpg"
+            alt="艾莉丝"
+            class="popup__image"
+          />
+        </div>
+
+        <div class="popup__right">
+          <div class="u-margin-bottom-med">
+            <h2 class="heading-secondary">艾莉丝·狂剑王·红妈妈·格雷拉特</h2>
+          </div>
+          <h3 class="u-margin-bottom-small">Lorem ipsum dolor sit ame</h3>
+          <p class="popup__text u-margin-bottom-med">
+            Lorem ipsum dolor sit amet. Et odio officiis est corporis assumenda
+            ut repellendus aliquam est nihil dolores eum velit voluptas et
+            consequatur similique. Qui quia laudantium non perspiciatis voluptas
+            eos accusantium explicabo non iure voluptatem nam nemo inventore et
+            deleniti natus. Lorem ipsum dolor sit amet. Et odio officiis est
+            corporis assumenda ut repellendus aliquam est nihil dolores eum
+            velit voluptas et consequatur similique. Qui quia laudantium non
+            perspiciatis voluptas eos accusantium explicabo non iure voluptatem
+            nam nemo inventore et deleniti natus.Lorem ipsum dolor sit amet. Et
+            odio officiis est corporis assumenda ut repellendus aliquam est
+            nihil dolores eum velit voluptas et consequatur similique. Qui quia
+            laudantium non perspiciatis voluptas eos accusantium explicabo non
+            iure voluptatem nam nemo inventore et deleniti natus.
+          </p>
+          <button class="btn btn--green">Booking Now</button>
+        </div>
+      </div>
+    </div>
 
     <!--     <div class="grid">
       <div class="row">

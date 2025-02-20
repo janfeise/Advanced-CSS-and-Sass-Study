@@ -1,0 +1,89 @@
+@use "../abstracts/" as a;
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: a.$color-black, $alpha: 0.8);
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &__content {
+    width: 70%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: a.$color-white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s 0.2s;
+
+    display: table;
+  }
+
+  &__left {
+    width: 33.3333333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.6666666%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 2rem 5rem;
+  }
+
+  &__image {
+    width: 100%;
+    background-size: cover;
+    margin: 0;
+    display: block;
+
+    &:not(:last-child) {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 2px solid a.$color-grey;
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    font-size: 4rem;
+    color: a.$color-grey-dark;
+    position: absolute;
+    top: 3.5rem;
+    right: 5.5rem;
+    transition: all 0.2s;
+
+    &:link,
+    &:visited {
+      list-style: none;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: a.$color-primary-green;
+    }
+  }
+}

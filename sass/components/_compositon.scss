@@ -30,7 +30,7 @@
     &:hover {
       z-index: 20;
       cursor: pointer;
-      transform: scale(1.1) translateY(-.5rem);
+      transform: scale(1.1) translateY(-0.5rem);
       box-shadow: 0 0.8rem 1.5rem rgba($color: a.$color-black, $alpha: 0.3);
       outline: 1rem solid a.$color-alice-red;
     }

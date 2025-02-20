@@ -1,7 +1,67 @@
-@mixin clearfix{
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/** 
+* 响应式设计：媒体查询
+*
+* 手机：width < 600px
+* 竖屏平板： width < 900px
+* 横屏平板： width < 1200px
+* normal 电脑： width < 1800px
+* 尺寸过大： width > 1800px
+*
+* 当用户改变浏览器的字体大小时：笔记本默认16px，如果放大为20px
+* 网站字体也应该跟着放大
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      /* 手机：600px / font-size = 37.5 */
+      /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+      /* 1em 为 浏览器字体大小 */
+      @content;
     }
+  }
+
+  @if $breakpoint == tab-port {
+    /* 横屏平板 */
+    @media (max-width: 56.25em) {
+      /* 横屏平板：900px / font-size = 56.25 */
+      /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+      /* 1em 为 浏览器字体大小 */
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    /* 竖屏平板 */
+    @media (max-width: 75em) {
+      /* 手机：1200px / font-size = 75 */
+      /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+      /* 1em 为 浏览器字体大小 */
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    /* 尺寸太大 */
+    @media (min-width: 112.5em) {
+      /* 手机：1800px / font-size = 112.5em */
+      /* 如果，用户将浏览器字体大小改变，那么 112.5em = 112.5 * 1em */
+      /* 1em 为 浏览器字体大小 */
+      @content;
+    }
+  }
+
+  /* 特殊断点 */
+  @if $breakpoint == 1100px {
+    @media (max-width: 68.75em) {
+      @content;
+    }
+  }
 }
