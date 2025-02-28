@@ -29,6 +29,11 @@ html {
     font-size: 50%;
   }
 
+  /* 特殊断点 */
+  @include a.respond(850px) {
+    font-size: 35%;
+  }
+
   @include a.respond(phone) {
     /* 手机：width < 600px */
     /* 手机：1rem = 4.8px */

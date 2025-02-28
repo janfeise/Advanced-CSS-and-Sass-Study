@@ -4,6 +4,37 @@
   background-color: a.$color-grey-light;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include a.respond(tab-land) {
+    margin-top: -16rem;
+    padding: 22rem 0;
+  }
+
+  @include a.respond(phone) {
+    margin-top: -15vh;
+    padding: 28rem 0;
+  }
+
+  & .paragraphy,
+  & h3 {
+    @include a.respond(tab-land) {
+      padding-left: 3rem;
+    }
+
+    @include a.respond(phone) {
+      padding: 0 8rem 0 8rem;
+    }
+  }
+
+  & .btn-text {
+    @include a.respond(tab-port) {
+      margin-left: 3rem;
+    }
+
+    @include a.respond(phone) {
+      margin: 0 8rem 0 8rem;
+    }
+  }
 }
 
 .section--feature {
@@ -22,12 +53,34 @@
   > * {
     transform: skewY(7deg);
   }
+
+  @include a.respond(tab-land) {
+    padding: 15rem 1rem;
+  }
 }
 
 .section--detail {
   margin-top: -9rem;
   padding: 25rem 15rem 15rem 15rem;
   background-color: a.$color-grey-light;
+
+  & h2 {
+    @include a.respond(phone) {
+      font-size: 2.3rem;
+    }
+  }
+
+  @include a.respond(tab-land) {
+    padding: 20rem 1rem 8rem 1rem;
+  }
+
+  @include a.respond(tab-port) {
+    padding: 25rem 25rem 15rem 25rem;
+  }
+
+  @include a.respond(phone) {
+    padding: 20rem 13rem 4rem 13rem;
+  }
 }
 
 .section--stories {
@@ -42,4 +95,8 @@
     a.$color-primary-light,
     a.$color-primary-dark
   );
+
+  @include a.respond(tab-port) {
+    padding: 15rem 5rem;
+  }
 }

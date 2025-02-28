@@ -26,11 +26,20 @@
     transition: all 0.5s 0.2s;
 
     display: table;
+
+    @include a.respond(tab-land) {
+      color: a.$color-grey-dark-1;
+    }
   }
 
   &__left {
     width: 33.3333333%;
     display: table-cell;
+
+    @include a.respond(tab-land) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -38,6 +47,38 @@
     display: table-cell;
     vertical-align: middle;
     padding: 2rem 5rem;
+
+    & h2 {
+      @include a.respond(tab-land) {
+        font-size: 2.5rem;
+      }
+
+      @include a.respond(phone) {
+        padding-top: 2rem;
+        font-size: 2rem;
+      }
+    }
+    & h3 {
+      @include a.respond(phone) {
+        padding-top: 2rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    & button {
+      @include a.respond(phone) {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @include a.respond(tab-land) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
   }
 
   &__image {
@@ -49,6 +90,10 @@
     &:not(:last-child) {
       transform: scaleX(-1);
     }
+
+    @include a.respond(tab-land) {
+      opacity: 0.5;
+    }
   }
 
   &__text {
@@ -57,6 +102,17 @@
     column-count: 2;
     column-gap: 3rem;
     column-rule: 2px solid a.$color-grey;
+
+    @include a.respond(tab-land) {
+      line-height: 2.5;
+      column-count: 3;
+    }
+
+    @include a.respond(phone) {
+      font-size: 1rem;
+      line-height: 2.5;
+      column-count: 4;
+    }
   }
 
   &:target {
@@ -66,15 +122,38 @@
 
   &:target &__content {
     transform: translate(-50%, -50%) scale(1);
+
+    @include a.respond(tab-land) {
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+
+    @include a.respond(1100px) {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    @include a.respond(phone) {
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 
   &__close {
     font-size: 4rem;
     color: a.$color-grey-dark;
     position: absolute;
-    top: 3.5rem;
-    right: 5.5rem;
+    top: -0.5rem;
+    right: 1.5rem;
     transition: all 0.2s;
+
+    @include a.respond(tab-port) {
+      color: a.$color-black;
+    }
+
+    @include a.respond(phone) {
+      font-size: 4.5rem;
+      top: -1.5rem;
+      right: 0.4rem;
+      color: a.$color-black;
+    }
 
     &:link,
     &:visited {

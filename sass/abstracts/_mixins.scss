@@ -41,7 +41,7 @@
   @if $breakpoint == tab-land {
     /* 竖屏平板 */
     @media (max-width: 75em) {
-      /* 手机：1200px / font-size = 75 */
+      /* 竖屏平板2：1200px / font-size = 75 */
       /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
       /* 1em 为 浏览器字体大小 */
       @content;
@@ -51,7 +51,7 @@
   @if $breakpoint == big-desktop {
     /* 尺寸太大 */
     @media (min-width: 112.5em) {
-      /* 手机：1800px / font-size = 112.5em */
+      /* 大尺寸：1800px / font-size = 112.5em */
       /* 如果，用户将浏览器字体大小改变，那么 112.5em = 112.5 * 1em */
       /* 1em 为 浏览器字体大小 */
       @content;
@@ -61,6 +61,13 @@
   /* 特殊断点 */
   @if $breakpoint == 1100px {
     @media (max-width: 68.75em) {
+      @content;
+    }
+  }
+
+  /* 特殊断点 */
+  @if $breakpoint == 850px {
+    @media (max-width: 53.125rem) {
       @content;
     }
   }

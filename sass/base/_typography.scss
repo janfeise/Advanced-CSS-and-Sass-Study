@@ -13,13 +13,17 @@
     animation-duration: 1s;
     animation-timing-function: ease-out;
 
+    @include a.respond(tab-port) {
+      letter-spacing: 1rem;
+      font-size: 6rem;
+    }
+
     @include a.respond(1100px) {
       letter-spacing: 4rem;
     }
 
-    @include a.respond(tab-port) {
-      letter-spacing: 1rem;
-      font-size: 6rem;
+    @include a.respond(phone) {
+      letter-spacing: 2.5rem;
     }
   }
 
@@ -35,13 +39,17 @@
     animation-name: moveInRight;
     animation-duration: 1s;
 
+    @include a.respond(tab-port) {
+      letter-spacing: 0.4rem;
+    }
+
     @include a.respond(1100px) {
       font-size: 2.8rem;
       letter-spacing: 1rem;
     }
 
-    @include a.respond(tab-port) {
-      letter-spacing: 0.4rem;
+    @include a.respond(phone) {
+      font-size: 2rem;
     }
   }
 }

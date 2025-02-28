@@ -1,3 +1,5 @@
+@use "../abstracts/" as a;
+
 .u-center-text {
   text-align: center;
 }
@@ -8,6 +10,10 @@
 
 .u-margin-bottom-med {
   margin-bottom: 4rem;
+
+  @include a.respond(phone) {
+    margin-bottom: 2rem !important;
+  }
 }
 
 .u-margin-bottom-large {
@@ -16,10 +22,22 @@
 
 .u-margin-bottom-huge {
   margin-bottom: 10rem;
+
+  @include a.respond(phone) {
+    margin-bottom: 5rem !important;
+  }
 }
 
 .u-margin-top-huge {
   margin-top: 10rem;
+
+  @include a.respond(tab-land) {
+    margin-top: 18rem;
+  }
+
+  @include a.respond(phone) {
+    margin-top: 5rem !important;
+  }
 }
 
 .u-default-letter-spacing {

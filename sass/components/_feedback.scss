@@ -4,17 +4,30 @@
   &__bg {
     background-image: linear-gradient(
         105deg,
-        rgba(a.$color-white, 0.85) 49.9%,
+        rgba(a.$color-white, 0.85) 49.5%,
         transparent 50%
       ),
       url("../../pic/images/德路迪亚村-白天.png");
     background-size: cover;
 
     height: 50rem;
+
+    @include a.respond(phone) {
+      background-image: linear-gradient(
+          105deg,
+          rgba(a.$color-white, 0.85) 100%,
+          transparent 100%
+        ),
+        url("../../pic/images/德路迪亚村-白天.png");
+    }
   }
 
   &__login-box {
     width: 50%;
     padding: 6rem;
+
+    @include a.respond(phone) {
+      width: 100%;
+    }
   }
 }

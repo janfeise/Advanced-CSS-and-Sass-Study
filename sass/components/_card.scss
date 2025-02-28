@@ -20,7 +20,7 @@
     transition: all 0.8s ease;
 
     &--front {
-      background-color: white;
+      background-color: a.$color-white;
     }
 
     &--back {
@@ -69,6 +69,10 @@
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
 
+    @include a.respond(phone) {
+      height: 38rem;
+    }
+
     &--1 {
       background-image: linear-gradient(
           to right bottom,
@@ -108,6 +112,10 @@
     position: absolute;
     top: 12rem;
     right: 2rem;
+
+    @include a.respond(phone) {
+      top: 27rem;
+    }
   }
 
   &__heading-span {
@@ -213,6 +221,75 @@
         a.$color-iconfonts-purple,
         a.$color-iconfonts-blue
       );
+    }
+  }
+
+  @include a.respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: a.$color-white;
+
+    &__side {
+      box-shadow: none;
+      border-radius: 0;
+      height: auto;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      &--back {
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__back-box {
+      text-align: center;
+      width: 100%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0);
+      padding: 10rem 4rem 5rem 5rem;
+    }
+
+    &__action {
+      transition: all 0.3s ease-in;
+
+      & &-text {
+        background-clip: text;
+        color: transparent;
+      }
+
+      & &-text-1 {
+        background-image: linear-gradient(
+          to right,
+          a.$color-alice-light,
+          a.$color-alice-dark
+        );
+      }
+
+      & &-text-2 {
+        background-image: linear-gradient(
+          to right,
+          a.$color-primary-light,
+          a.$color-primary-dark
+        );
+      }
+
+      & &-text-3 {
+        background-image: linear-gradient(
+          to right,
+          a.$color-iconfonts-purple,
+          a.$color-iconfonts-blue
+        );
+      }
     }
   }
 }

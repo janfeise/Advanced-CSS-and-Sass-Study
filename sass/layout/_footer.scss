@@ -19,6 +19,11 @@
   &__navigation {
     border-top: 2px solid a.$color-grey-dark;
     display: inline-block;
+
+    @include a.respond(tab-port) {
+      width: 80%;
+      margin-bottom: 3rem;
+    }
   }
 
   &__list {
@@ -57,5 +62,9 @@
     display: inline-block;
     padding-top: 1rem;
     text-align: left;
+
+    @include a.respond(tab-port) {
+      text-align: center;
+    }
   }
 }

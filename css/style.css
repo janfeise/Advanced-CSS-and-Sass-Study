@@ -43,15 +43,22 @@ html {
   */
   /* 竖屏平板 */
   /* 特殊断点 */
+  /* 特殊断点 */
   /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
   /* 特殊断点 */
   /* 特殊断点 */
   /* 尺寸太大 */
   /* 特殊断点 */
+  /* 特殊断点 */
 }
 @media (max-width: 75em) {
   html {
-    /* 手机：1200px / font-size = 75 */
+    /* 竖屏平板2：1200px / font-size = 75 */
     /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
     /* 1em 为 浏览器字体大小 */
     /* 竖屏平板：width < 1200px */
@@ -69,6 +76,11 @@ html {
     font-size: 50%;
   }
 }
+@media (max-width: 53.125rem) {
+  html {
+    font-size: 35%;
+  }
+}
 @media (max-width: 37.5em) {
   html {
     /* 手机：600px / font-size = 37.5 */
@@ -81,7 +93,7 @@ html {
 }
 @media (min-width: 112.5em) {
   html {
-    /* 手机：1800px / font-size = 112.5em */
+    /* 大尺寸：1800px / font-size = 112.5em */
     /* 如果，用户将浏览器字体大小改变，那么 112.5em = 112.5 * 1em */
     /* 1em 为 浏览器字体大小 */
     /* 大尺寸：width > 1800 */
@@ -96,6 +108,7 @@ body {
   box-sizing: border-box;
   padding: 3rem;
   /* 横屏平板 */
+  /* 特殊断点 */
   /* 特殊断点 */
 }
 @media (max-width: 56.25em) {
@@ -159,14 +172,13 @@ body:hover {
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  /* 特殊断点 */
   /* 横屏平板 */
   /* 特殊断点 */
-}
-@media (max-width: 68.75em) {
-  .heading-primary--main {
-    letter-spacing: 4rem;
-  }
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 @media (max-width: 56.25em) {
   .heading-primary--main {
@@ -175,6 +187,19 @@ body:hover {
     /* 1em 为 浏览器字体大小 */
     letter-spacing: 1rem;
     font-size: 6rem;
+  }
+}
+@media (max-width: 68.75em) {
+  .heading-primary--main {
+    letter-spacing: 4rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    letter-spacing: 2.5rem;
   }
 }
 .heading-primary--sub {
@@ -187,15 +212,13 @@ body:hover {
   /* 动画 */
   animation-name: moveInRight;
   animation-duration: 1s;
-  /* 特殊断点 */
   /* 横屏平板 */
   /* 特殊断点 */
-}
-@media (max-width: 68.75em) {
-  .heading-primary--sub {
-    font-size: 2.8rem;
-    letter-spacing: 1rem;
-  }
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 @media (max-width: 56.25em) {
   .heading-primary--sub {
@@ -203,6 +226,20 @@ body:hover {
     /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
     /* 1em 为 浏览器字体大小 */
     letter-spacing: 0.4rem;
+  }
+}
+@media (max-width: 68.75em) {
+  .heading-primary--sub {
+    font-size: 2.8rem;
+    letter-spacing: 1rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 2rem;
   }
 }
 
@@ -252,6 +289,16 @@ body:hover {
 
 .u-margin-bottom-med {
   margin-bottom: 4rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .u-margin-bottom-med {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-bottom: 2rem !important;
+  }
 }
 
 .u-margin-bottom-large {
@@ -260,10 +307,41 @@ body:hover {
 
 .u-margin-bottom-huge {
   margin-bottom: 10rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .u-margin-bottom-huge {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-bottom: 5rem !important;
+  }
 }
 
 .u-margin-top-huge {
   margin-top: 10rem;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .u-margin-top-huge {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: 18rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .u-margin-top-huge {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: 5rem !important;
+  }
 }
 
 .u-default-letter-spacing {
@@ -409,6 +487,9 @@ body:hover {
   position: relative;
   perspective: 150rem;
   /* front图片的样式设置 */
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 .card__side {
   border-radius: 3px;
@@ -423,7 +504,7 @@ body:hover {
   transition: all 0.8s ease;
 }
 .card__side--front {
-  background-color: white;
+  background-color: #fff;
 }
 .card__side--back {
   background-color: green;
@@ -450,6 +531,16 @@ body:hover {
   background-size: cover;
   background-blend-mode: screen;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .card__picture {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: 38rem;
+  }
 }
 .card__picture--1 {
   background-image: linear-gradient(to right bottom, #ff6b6b, #ad2a2a), url("../../pic/images/艾莉丝/艾莉丝-2.jpg");
@@ -471,6 +562,16 @@ body:hover {
   position: absolute;
   top: 12rem;
   right: 2rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .card__heading {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 27rem;
+  }
 }
 .card__heading-span {
   font-family: "LXGW WenKai Mono TC", serif;
@@ -539,9 +640,72 @@ body:hover {
 .card__action:hover .card__action-text-3 {
   background-image: linear-gradient(to right, #8a2be2, #1e90ff);
 }
+@media (max-width: 56.25em) {
+  .card {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: auto;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  .card__side {
+    box-shadow: none;
+    border-radius: 0;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .card__side--back {
+    transform: rotateY(0deg);
+    clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .card:hover .card__side--front {
+    transform: rotateY(0deg);
+  }
+  .card__back-box {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(0);
+    padding: 10rem 4rem 5rem 5rem;
+  }
+  .card__action {
+    transition: all 0.3s ease-in;
+  }
+  .card__action .card__action-text {
+    background-clip: text;
+    color: transparent;
+  }
+  .card__action .card__action-text-1 {
+    background-image: linear-gradient(to right, #ff6b6b, #ad2a2a);
+  }
+  .card__action .card__action-text-2 {
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+  }
+  .card__action .card__action-text-3 {
+    background-image: linear-gradient(to right, #8a2be2, #1e90ff);
+  }
+}
 
 .composition {
   position: relative;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin: 5rem;
+  }
 }
 .composition__photo {
   width: 55%;
@@ -551,18 +715,72 @@ body:hover {
   z-index: 10;
   transition: all 0.2s;
   outline-offset: 2rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    float: left;
+    position: relative;
+    width: 33.33333%;
+  }
 }
 .composition__photo-1 {
   top: -2rem;
-  left: 0rem;
+  left: 3rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo-1 {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 1rem;
+    transform: scale(1.2);
+  }
 }
 .composition__photo-2 {
   top: 6rem;
   left: 25rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo-2 {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: -1rem;
+    left: 0;
+    z-index: 100;
+    transform: scale(1.3);
+  }
 }
 .composition__photo-3 {
   top: 14rem;
   left: 5rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo-3 {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 1rem;
+    left: 0rem;
+    transform: scale(1.2);
+  }
 }
 .composition__photo:hover {
   z-index: 20;
@@ -583,6 +801,29 @@ body:hover {
   border-radius: 3px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .feature-box {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 37.5em) {
+  .feature-box {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 55%;
+    margin: 0 auto;
+  }
 }
 .feature-box__icon {
   font-size: 6rem;
@@ -594,6 +835,27 @@ body:hover {
 }
 .feature-box__text {
   height: 15rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .feature-box__text {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0 10rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .feature-box__text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0 4rem;
+  }
 }
 .feature-box:hover {
   transform: translateY(-1.5rem) scale(1.03);
@@ -601,13 +863,33 @@ body:hover {
 }
 
 .feedback__bg {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 49.9%, transparent 50%), url("../../pic/images/德路迪亚村-白天.png");
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 49.5%, transparent 50%), url("../../pic/images/德路迪亚村-白天.png");
   background-size: cover;
   height: 50rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .feedback__bg {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 100%, transparent 100%), url("../../pic/images/德路迪亚村-白天.png");
+  }
 }
 .feedback__login-box {
   width: 50%;
   padding: 6rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .feedback__login-box {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 100%;
+  }
 }
 
 .form__group {
@@ -680,6 +962,16 @@ body:hover {
   border: 5px solid #55c57a;
   position: absolute;
   left: 0;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .form__radio-button {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    border-width: 3px;
+  }
 }
 .form__radio-button::after {
   content: "";
@@ -692,6 +984,19 @@ body:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .form__radio-button::after {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 1rem;
+    height: 1rem;
+    border-width: 4px;
+  }
 }
 .form__radio-input:checked + .form__radio-label .form__radio-button::after {
   opacity: 1;
@@ -724,31 +1029,154 @@ body:hover {
   transform: translate(-50%, -50%) scale(0.25);
   transition: all 0.5s 0.2s;
   display: table;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__content {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    color: #333;
+  }
 }
 .popup__left {
   width: 33.3333333%;
   display: table-cell;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__left {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 100%;
+    display: block;
+  }
 }
 .popup__right {
   width: 66.6666666%;
   display: table-cell;
   vertical-align: middle;
   padding: 2rem 5rem;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.popup__right h2 {
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__right h2 {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__right h2 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding-top: 2rem;
+    font-size: 2rem;
+  }
+}
+.popup__right h3 {
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .popup__right h3 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding-top: 2rem;
+    font-size: 1.5rem;
+  }
+}
+.popup__right button {
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .popup__right button {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 75em) {
+  .popup__right {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 }
 .popup__image {
   width: 100%;
   background-size: cover;
   margin: 0;
   display: block;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 .popup__image:not(:last-child) {
   transform: scaleX(-1);
+}
+@media (max-width: 75em) {
+  .popup__image {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    opacity: 0.5;
+  }
 }
 .popup__text {
   font-size: 1.4rem;
   column-count: 2;
   column-gap: 3rem;
   column-rule: 2px solid #eee;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__text {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    line-height: 2.5;
+    column-count: 3;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 1rem;
+    line-height: 2.5;
+    column-count: 4;
+  }
 }
 .popup:target {
   opacity: 1;
@@ -756,14 +1184,66 @@ body:hover {
 }
 .popup:target .popup__content {
   transform: translate(-50%, -50%) scale(1);
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup:target .popup__content {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media (max-width: 68.75em) {
+  .popup:target .popup__content {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+@media (max-width: 37.5em) {
+  .popup:target .popup__content {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 .popup__close {
   font-size: 4rem;
   color: #777;
   position: absolute;
-  top: 3.5rem;
-  right: 5.5rem;
+  top: -0.5rem;
+  right: 1.5rem;
   transition: all 0.2s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .popup__close {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    color: #000;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__close {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 4.5rem;
+    top: -1.5rem;
+    right: 0.4rem;
+    color: #000;
+  }
 }
 .popup__close:link, .popup__close:visited {
   list-style: none;
@@ -859,6 +1339,18 @@ body:hover {
 .footer__navigation {
   border-top: 2px solid #777;
   display: inline-block;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 80%;
+    margin-bottom: 3rem;
+  }
 }
 .footer__list {
   list-style: none;
@@ -889,6 +1381,17 @@ body:hover {
   display: inline-block;
   padding-top: 1rem;
   text-align: left;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .footer__copyright {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    text-align: center;
+  }
 }
 
 .row {
@@ -905,9 +1408,32 @@ body:hover {
 }
 .row [class^=col-] {
   float: left;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    float: none !important;
+    width: 100% !important;
+  }
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
@@ -935,6 +1461,27 @@ body:hover {
   background-position: center;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .header {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  }
+}
+@media (max-width: 37.5em) {
+  .header {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  }
 }
 .header__logo {
   position: absolute;
@@ -964,6 +1511,18 @@ body:hover {
   width: 7rem;
   height: 7rem;
   box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__button {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 4rem;
+    right: 4rem;
+  }
 }
 .navigation__background {
   width: 6rem;
@@ -975,6 +1534,18 @@ body:hover {
   right: 6.5rem;
   z-index: 1000;
   transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__background {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 4.5rem;
+    right: 4.5rem;
+  }
 }
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(68);
@@ -1035,16 +1606,38 @@ body:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__icon {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: 1.5px;
+  }
 }
 .navigation__icon::before, .navigation__icon::after {
   content: "";
   position: absolute;
   left: 50%;
   width: 100%;
-  height: 100%;
+  height: 2px;
   background-color: #000;
   transform: translate(-50%, -50%);
   transition: all 0.2s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__icon::before, .navigation__icon::after {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: 1.5px;
+  }
 }
 .navigation__icon::before {
   top: -1rem;
@@ -1083,6 +1676,75 @@ body:hover {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .section--about {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: -16rem;
+    padding: 22rem 0;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--about {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: -15vh;
+    padding: 28rem 0;
+  }
+}
+.section--about .paragraphy, .section--about h3 {
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .section--about .paragraphy, .section--about h3 {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding-left: 3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--about .paragraphy, .section--about h3 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0 8rem 0 8rem;
+  }
+}
+.section--about .btn-text {
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .section--about .btn-text {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-left: 3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--about .btn-text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin: 0 8rem 0 8rem;
+  }
 }
 
 .section--feature {
@@ -1091,15 +1753,70 @@ body:hover {
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -9rem;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 .section--feature > * {
   transform: skewY(7deg);
+}
+@media (max-width: 75em) {
+  .section--feature {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 15rem 1rem;
+  }
 }
 
 .section--detail {
   margin-top: -9rem;
   padding: 25rem 15rem 15rem 15rem;
   background-color: #f7f7f7;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.section--detail h2 {
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .section--detail h2 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 75em) {
+  .section--detail {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 20rem 1rem 8rem 1rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .section--detail {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 25rem 25rem 15rem 25rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--detail {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 20rem 13rem 4rem 13rem;
+  }
 }
 
 .section--stories {
@@ -1110,6 +1827,17 @@ body:hover {
 .section__feedback-login {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .section__feedback-login {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 15rem 5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

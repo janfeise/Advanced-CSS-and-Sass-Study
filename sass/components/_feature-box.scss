@@ -9,6 +9,16 @@
   box-shadow: 0 0.5rem 1rem rgba($color: a.$color-black, $alpha: 0.3);
   transition: all 0.2s;
 
+  @include a.respond(tab-port) {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  @include a.respond(phone) {
+    width: 55%;
+    margin: 0 auto;
+  }
+
   &__icon {
     font-size: 6rem;
     display: inline-block;
@@ -25,6 +35,14 @@
 
   &__text {
     height: 15rem;
+
+    @include a.respond(tab-port) {
+      padding: 0 10rem;
+    }
+
+    @include a.respond(phone) {
+      padding: 0 4rem;
+    }
   }
 
   &:hover {

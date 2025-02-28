@@ -15,6 +15,15 @@
 
     &:not(:last-child) {
       margin-right: a.$grid-margin-right;
+
+      @include a.respond(tab-port) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    @include a.respond(tab-port) {
+      float: none !important;
+      width: 100% !important;
     }
   }
 
@@ -27,7 +36,9 @@
   }
 
   .col-2-of-3 {
-    width: calc((100% - #{a.$grid-margin-right} * 2) / 3 * 2 + #{a.$grid-margin-right});
+    width: calc(
+      (100% - #{a.$grid-margin-right} * 2) / 3 * 2 + #{a.$grid-margin-right}
+    );
   }
 
   .col-1-of-4 {
@@ -35,10 +46,14 @@
   }
 
   .col-2-of-4 {
-    width: calc((100% - #{a.$grid-margin-right} * 3) / 4 * 2 + #{a.$grid-margin-right});
+    width: calc(
+      (100% - #{a.$grid-margin-right} * 3) / 4 * 2 + #{a.$grid-margin-right}
+    );
   }
 
   .col-3-of-4 {
-    width: calc((100% - #{a.$grid-margin-right} * 3) / 4 * 3 + #{a.$grid-margin-right} * 2);
+    width: calc(
+      (100% - #{a.$grid-margin-right} * 3) / 4 * 3 + #{a.$grid-margin-right} * 2
+    );
   }
 }

@@ -6,7 +6,7 @@
       to right bottom,
       rgb(a.$color-alice-red, 0.8),
       rgb(a.$color-primary-green, 0.8),
-      rgb(a.$color-rokhi-dark, .8)
+      rgb(a.$color-rokhi-dark, 0.8)
     ),
     url("../pic/images/手游视觉.png");
   background-size: cover;
@@ -14,6 +14,14 @@
   position: relative;
 
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+  @include a.respond(tab-land) {
+    clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  }
+
+  @include a.respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  }
 
   &__logo {
     position: absolute;
