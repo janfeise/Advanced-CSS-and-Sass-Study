@@ -1256,6 +1256,9 @@ body:hover {
     top: -1.5rem;
     right: 0.4rem;
     color: #000;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 .popup__close:link, .popup__close:visited {

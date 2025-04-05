@@ -153,6 +153,9 @@
       top: -1.5rem;
       right: 0.4rem;
       color: a.$color-black;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
     }
 
     &:link,

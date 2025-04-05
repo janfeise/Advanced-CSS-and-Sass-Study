@@ -4,6 +4,7 @@
 const navItemEl = document.querySelectorAll(".navigation__item");
 const navToggleEl = document.getElementById("nav-toggle");
 const popEl = document.querySelectorAll(".popup");
+const popCloseEl = document.querySelectorAll(".popup__close");
 
 // 遍历所有navItem
 const navItemCount = navItemEl.length;
@@ -14,11 +15,10 @@ for (let i = 0; i < navItemCount; i++) {
   });
 }
 
-// // 遍历所有弹窗
-// const popCount = popEl.length; // 获取弹窗数量
-// for (let i = 0; i < popCount; i++) {
-//   popEl[i].addEventListener("click", function () {
-//     popEl[i].style.opcity = 0;
-//     popEl[i].style.visibility = "hidden";
-//   });
-// }
+// 遍历所有弹窗
+const popCount = popEl.length; // 获取弹窗数量
+for (let i = 0; i < popCount; i++) {
+  popEl[i].addEventListener("click", function () {
+    popCloseEl[i].click();
+  });
+}
