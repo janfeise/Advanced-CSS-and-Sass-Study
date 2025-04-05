@@ -25,9 +25,12 @@
     <!-- 魔术帽字体图标 -->
     <link rel="stylesheet" href="./css/style.css" />
     <title>无职转生</title>
+
+    <!-- 导入js文件 -->
+    <script defer src="script.js"></script>
   </head>
 
-  <body>
+  <body id="header">
     <div class="navigation">
       <input type="checkbox" id="nav-toggle" class="navigation__checkbox" />
       <label for="nav-toggle" class="navigation__button">
@@ -40,30 +43,40 @@
         <ul class="navigation__list">
           <li class="navigation__item">
             <a href="#header" class="navigation__link"
-              ><span>01</span>ABUOUT NATOURS</a
+              ><span>01</span>無職轉生</a
             >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span>02</span>YOUR BENEFITS</a
+            <a href="#alice" class="navigation__link"
+              ><span>02</span>艾莉絲·狂劍王</a
             >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"
-              ><span>03</span>POPULAR TOURS</a
+            <a href="#section--feature" class="navigation__link"
+              ><span>03</span>無職·せかい</a
             >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>04</span>STORIES</a>
+            <a href="#card" class="navigation__link"
+              ><span>04</span>這一刻，心已有归属</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link"><span>05</span>BOOK NOW</a>
+            <a href="#company" class="navigation__link"
+              ><span>05</span>龍神魔力有限公司</a
+            >
+          </li>
+
+          <li class="navigation__item">
+            <a href="#section__feedback-login" class="navigation__link"
+              ><span>06</span>德魯迪亞村</a
+            >
           </li>
         </ul>
       </nav>
     </div>
 
-    <header class="header" id="header">
+    <header class="header">
       <div class="logoContainer">
         <img src="./pic/images/手游logo.png" alt="logo" class="header__logo" />
       </div>
@@ -76,12 +89,12 @@
     </header>
 
     <main>
-      <section class="section--about">
+      <section class="section--about" id="alice">
         <div class="u-center-text u-margin-bottom-large">
           <h2 class="heading-secondary">艾莉丝·狂剑王·红妈妈·格雷拉特</h2>
         </div>
 
-        <div class="row">
+        <div class="row text-selection text-selection--alice">
           <div class="col-1-of-2">
             <h3 class="heading-tertiary u-margin-bottom-small">
               艾莉丝·格雷拉特
@@ -92,7 +105,7 @@
               而在鲁迪担任家庭导师期间，在转魔大陆长达三年的归途期间，艾莉丝已是那个满眼都是鲁迪乌斯的小女孩
             </p>
             <p class="paragraphy">
-              从什么时候开始喜欢的呢？<br />命悬一线，魔法球爆出的炫丽烟花所发出的求救信号，倒映在艾莉丝眼瞳？15岁生日，孤立无援时鲁迪的邀请？魔大陆三年归途的陪伴？
+              从什么时候开始喜欢的呢？<br />命悬一线，魔法球爆出的炫丽烟花所发出的求救信号，倒映在艾莉丝眼瞳？10岁生日，孤立无援时鲁迪的邀请？魔大陆三年归途的陪伴？
             </p>
 
             <p class="paragraphy">总之,</p>
@@ -122,7 +135,7 @@
         </div>
       </section>
 
-      <section class="section--feature">
+      <section class="section--feature" id="section--feature">
         <div class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
@@ -170,9 +183,9 @@
         </div>
       </section>
 
-      <section class="section--detail" id="card">
-        <div class="u-center-text u-margin-bottom-large">
-          <h2 class="heading-secondary">鲁迪乌斯·一夫一妻一神·格雷拉特</h2>
+      <section class="section--detail">
+        <div class="u-center-text u-margin-bottom-large" id="card">
+          <h2 class="heading-secondary">这一刻，心已有归属</h2>
         </div>
 
         <div class="row">
@@ -289,13 +302,28 @@
       </section>
 
       <section class="section--stories">
-        <div class="bg-video">
+        <div class="u-center-text u-margin-bottom-large" id="company">
+          <h2 class="heading-secondary heading-secondary--large-letter-spacing">
+            龙神魔力有限公司
+          </h2>
+        </div>
+        <div class="story">
+          <img
+            src="pic/images/14 奥尔斯帝德 全身立绘.png"
+            alt="奥尔斯帝德"
+            class="orsted"
+          />
+          <p>
+            龙神身披银甲，金瞳中流转着跨越千年的轮回之焰。作为初代龙神的转生者，他背负着与人神对抗的永恒宿命，在无数次的轮回中独自咀嚼孤独的重量。他的力量足以碾碎大陆，却始终被困在因果的牢笼里；他洞悉世间一切魔法与武技，却在与人心的距离中永远隔着一道冰冷的结界。当他凝视主角鲁迪乌斯时，目光里既有审视棋子的漠然，又暗藏着一丝对"变数"的灼热期待——这位行走于人间的神明，既是毁灭的具象，亦是救赎的火种，在永劫的螺旋中撕开命运的裂缝。
+          </p>
+        </div>
+        <!-- <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
             <source src="./video/第二季OP【无字幕】.mp4" />
             浏览器不支持该类型的视频
           </video>
         </div>
-        <div class="u-center-text u-margin-bottom-large">
+        <div class="u-center-text u-margin-bottom-large" id="company">
           <h2 class="heading-secondary heading-secondary--large-letter-spacing">
             龙神魔力有限公司
           </h2>
@@ -350,10 +378,10 @@
           <a href="#" class="btn-text btn-text--green btn-text--OP-font-size"
             >第二季OP &rarr;</a
           >
-        </div>
+        </div> -->
       </section>
 
-      <section class="section__feedback-login">
+      <section class="section__feedback-login" id="section__feedback-login">
         <div class="row">
           <div class="feedback__bg">
             <div class="feedback__login-box">
@@ -479,9 +507,9 @@
           />
         </div>
 
-        <div class="popup__right">
+        <div class="popup__right text-selection text-selection--alice">
           <div class="u-margin-bottom-med">
-            <h2 class="heading-secondary">艾莉丝·狂剑王·红妈妈·格雷拉特</h2>
+            <h2 class="heading-secondary">艾莉丝·狂剑王·格雷拉特</h2>
           </div>
           <h3 class="u-margin-bottom-small">Lorem ipsum dolor sit ame</h3>
           <p class="popup__text u-margin-bottom-med">
@@ -510,19 +538,19 @@
         <div class="popup__left">
           <img
             src="./pic/images/希露菲-3.jpg"
-            alt="艾莉丝"
+            alt="希露菲"
             class="popup__image"
           />
           <img
             src="./pic/images/希露菲-3.jpg"
-            alt="艾莉丝"
+            alt="希露菲"
             class="popup__image"
           />
         </div>
 
-        <div class="popup__right">
+        <div class="popup__right text-selection text-selection--primary">
           <div class="u-margin-bottom-med">
-            <h2 class="heading-secondary">艾莉丝·狂剑王·红妈妈·格雷拉特</h2>
+            <h2 class="heading-secondary">希露菲·沉默的菲兹·格雷拉特</h2>
           </div>
           <h3 class="u-margin-bottom-small">Lorem ipsum dolor sit ame</h3>
           <p class="popup__text u-margin-bottom-med">
@@ -551,19 +579,19 @@
         <div class="popup__left">
           <img
             src="./pic/images/洛琪希.jpg"
-            alt="艾莉丝"
+            alt="洛琪希"
             class="popup__image"
           />
           <img
             src="./pic/images/洛琪希.jpg"
-            alt="艾莉丝"
+            alt="洛琪希"
             class="popup__image"
           />
         </div>
 
-        <div class="popup__right">
+        <div class="popup__right text-selection text-selection--roxy">
           <div class="u-margin-bottom-med">
-            <h2 class="heading-secondary">艾莉丝·狂剑王·红妈妈·格雷拉特</h2>
+            <h2 class="heading-secondary">洛琪希·水王级魔法师·格雷拉特</h2>
           </div>
           <h3 class="u-margin-bottom-small">Lorem ipsum dolor sit ame</h3>
           <p class="popup__text u-margin-bottom-med">

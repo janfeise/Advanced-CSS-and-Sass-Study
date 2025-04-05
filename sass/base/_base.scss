@@ -62,3 +62,21 @@ body {
     cursor: default;
   }
 }
+
+.text-selection {
+  &::selection {
+    color: a.$color-grey-light;
+  }
+
+  &--alice::selection {
+    background: a.$color-alice-light;
+  }
+
+  &--primary::selection {
+    background: a.$color-primary-green;
+  }
+
+  &--roxy::selection {
+    background: a.$color-rokhi-blue;
+  }
+}

@@ -123,6 +123,19 @@ body:hover {
   cursor: default;
 }
 
+.text-selection::selection {
+  color: #f7f7f7;
+}
+.text-selection--alice::selection {
+  background: #ff6b6b;
+}
+.text-selection--primary::selection {
+  background: #55c57a;
+}
+.text-selection--roxy::selection {
+  background: #6a94d4;
+}
+
 /* 左侧滑入动画 */
 @keyframes moveInLeft {
   0% {
@@ -1254,7 +1267,6 @@ body:hover {
 }
 
 .story {
-  width: 60%;
   margin: 0 auto;
   padding: 5rem;
   padding-left: 8rem;
@@ -1263,63 +1275,12 @@ body:hover {
   font-weight: 700;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   font-family: serif;
-  background-color: rgba(255, 255, 255, 0.6);
-  transform: skewX(-12deg);
 }
-.story > * {
-  transform: skewX(12deg);
-}
-.story__shape {
-  width: 15rem;
-  height: 15rem;
-  float: left;
-  position: relative;
-  shape-outside: circle(47% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
-  transform: translateX(-3rem) skewX(12deg);
-}
-.story__img {
-  width: 100%;
-  height: 100%;
-  transition: all 0.5s;
-}
-.story__img--Orsted {
-  transform: scale(2.2) translate(5%, 20%);
-}
-.story__img--rudy {
-  transform: scale(2) translate(-3%, 22%);
-}
-.story__text {
-  font-size: 1.5rem;
-}
-.story__caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: max-content;
-  color: #fff;
-  text-align: center;
-  opacity: 0;
-  transform: translate(-50%, 20%);
-  transition: all 0.5s;
-}
-.story__caption--Orsted {
-  color: #ffd700;
-}
-.story__caption--rudy {
-  color: #ffd700;
-}
-.story:hover .story__caption {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-.story:hover .story__img--Orsted {
-  transform: scale(1.8) translate(5%, 20%);
-  filter: blur(3px) brightness(90%);
-}
-.story:hover .story__img--rudy {
-  transform: scale(1.7) translateY(20%);
-  filter: blur(3px) brightness(80%);
+
+.orsted {
+  width: 300px;
+  float: right;
+  transform: scaleX(-1);
 }
 
 .footer {
