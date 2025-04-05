@@ -1,0 +1,38 @@
+@use "../abstracts/" as a;
+
+.scrolling-text {
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../../pic/images/艾莉丝/艾莉丝-剑之圣地-原图.jpg");
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+  }
+
+  &__details {
+    position: absolute;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox 隐藏滚动条 */
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+    color: a.$color-grey-light;
+    letter-spacing: 6px;
+    filter: drop-shadow(0 0.5rem 2rem rgba(a.$color-white, 0.9));
+    padding: 0.5rem 1.5rem;
+    line-height: 2;
+    text-indent: 2em;
+  }
+}
+
+/* 隐藏关闭按钮 */
+.scrolling-text .popup__close {
+  visibility: hidden;
+}

@@ -102,6 +102,10 @@ html {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 body {
   color: #777;
   line-height: 1.7;
@@ -1026,16 +1030,23 @@ body:hover {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
+  z-index: 6666;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
+}
+.popup__cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 8888;
 }
 .popup__content {
   width: 70%;
   border-radius: 5px;
   overflow: hidden;
   background-color: #fff;
+  z-index: 9999;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1045,6 +1056,10 @@ body:hover {
   /* 竖屏平板 */
   /* 特殊断点 */
   /* 特殊断点 */
+}
+.popup__content.scrolling-text {
+  width: 80vw;
+  height: 80vh;
 }
 @media (max-width: 75em) {
   .popup__content {
@@ -1267,6 +1282,38 @@ body:hover {
 }
 .popup__close:hover {
   color: #55c57a;
+}
+
+.scrolling-text__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../pic/images/艾莉丝/艾莉丝-剑之圣地-原图.jpg");
+  background-size: cover;
+  filter: blur(3px);
+  z-index: -1;
+}
+.scrolling-text__details {
+  position: absolute;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none; /* Firefox 隐藏滚动条 */
+}
+.scrolling-text__paragraph {
+  font-size: 2rem;
+  color: #f7f7f7;
+  letter-spacing: 6px;
+  filter: drop-shadow(0 0.5rem 2rem rgba(255, 255, 255, 0.9));
+  padding: 0.5rem 1.5rem;
+  line-height: 2;
+  text-indent: 2em;
+}
+
+/* 隐藏关闭按钮 */
+.scrolling-text .popup__close {
+  visibility: hidden;
 }
 
 .story {
