@@ -1,5 +1,7 @@
 # 无职转生静态网页制作
 
+[在线预览](https://iridescent-longma-92ff0e.netlify.app/)
+
 css学习
 
 课程：[Advanced CSS and Sass: Flexbox, Grid, Animations and More!](https://www.udemy.com/course/advanced-css-and-sass/?couponCode=V2JPLETSLEARN)
