@@ -31,13 +31,13 @@ html {
 
   /* 特殊断点 */
   @include a.respond(850px) {
-    font-size: 35%;
+    font-size: 45%;
   }
 
   @include a.respond(phone) {
     /* 手机：width < 600px */
     /* 手机：1rem = 4.8px */
-    font-size: 30%;
+    font-size: 34%;
   }
 
   @include a.respond(big-desktop) {

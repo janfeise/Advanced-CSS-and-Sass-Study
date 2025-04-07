@@ -38,6 +38,11 @@
     &.scrolling-text {
       width: 80vw;
       height: 80vh;
+
+      @include a.respond(850px) {
+        width: 120vw;
+        height: 120vh;
+      }
     }
 
     @include a.respond(tab-land) {

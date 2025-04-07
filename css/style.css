@@ -78,7 +78,7 @@ html {
 }
 @media (max-width: 53.125rem) {
   html {
-    font-size: 35%;
+    font-size: 45%;
   }
 }
 @media (max-width: 37.5em) {
@@ -88,7 +88,7 @@ html {
     /* 1em 为 浏览器字体大小 */
     /* 手机：width < 600px */
     /* 手机：1rem = 4.8px */
-    font-size: 30%;
+    font-size: 34%;
   }
 }
 @media (min-width: 112.5em) {
@@ -735,8 +735,6 @@ body:hover {
   /* 横屏平板 */
   /* 特殊断点 */
   /* 特殊断点 */
-  /* 特殊断点 */
-  /* 特殊断点 */
 }
 @media (max-width: 56.25em) {
   .composition__photo {
@@ -800,14 +798,34 @@ body:hover {
   }
 }
 .composition__photo:hover {
-  z-index: 20;
+  z-index: 200;
   cursor: pointer;
   transform: scale(1.1) translateY(-0.5rem);
   box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
   outline: 1rem solid #d8434e;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .composition__photo:hover {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    transform: scale(1.2) translateY(-0.5rem);
+  }
 }
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.9);
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .composition:hover .composition__photo:not(:hover) {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    transform: scale(1.05);
+  }
 }
 
 .feature-box {
@@ -1060,6 +1078,14 @@ body:hover {
 .popup__content.scrolling-text {
   width: 80vw;
   height: 80vh;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 53.125rem) {
+  .popup__content.scrolling-text {
+    width: 120vw;
+    height: 120vh;
+  }
 }
 @media (max-width: 75em) {
   .popup__content {
@@ -1284,12 +1310,16 @@ body:hover {
   color: #55c57a;
 }
 
+.scrolling-text {
+  object-fit: contain; /* 保证图片完整显示，自动留白 */
+}
 .scrolling-text__bg {
   position: absolute;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../pic/images/艾莉丝/艾莉丝-剑之圣地-原图.jpg");
   background-size: cover;
+  background-position: center;
   filter: blur(3px);
   z-index: -1;
 }
@@ -1560,6 +1590,17 @@ body:hover {
 }
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(68);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__checkbox:checked ~ .navigation__background {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    transform: scale(85);
+  }
 }
 .navigation__nav {
   position: fixed;
@@ -1569,11 +1610,13 @@ body:hover {
   width: 100%;
   height: 100vh;
   text-align: center;
+  visibility: hidden;
   opacity: 0;
   width: 0;
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 .navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
   opacity: 1;
   width: 100%;
 }

@@ -1,6 +1,8 @@
 @use "../abstracts/" as a;
 
 .scrolling-text {
+  object-fit: contain; /* 保证图片完整显示，自动留白 */
+
   &__bg {
     position: absolute;
     width: 100%;
@@ -8,6 +10,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url("../../pic/images/艾莉丝/艾莉丝-剑之圣地-原图.jpg");
     background-size: cover;
+    background-position: center;
     filter: blur(3px);
     z-index: -1;
   }
