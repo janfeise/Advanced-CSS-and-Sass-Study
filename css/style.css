@@ -289,11 +289,11 @@ body:hover {
   letter-spacing: 0.7rem;
 }
 
-.paragraph {
+.paragraphy {
   font-size: 1.6rem;
   line-height: 2;
 }
-.paragraph:not(:last-child) {
+.paragraphy:not(:last-child) {
   margin-bottom: 1rem;
 }
 
