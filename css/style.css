@@ -1604,6 +1604,8 @@ body:hover {
   /* 横屏平板 */
   /* 特殊断点 */
   /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
 }
 @media (max-width: 56.25em) {
   .navigation__checkbox:checked ~ .navigation__background {
@@ -1611,6 +1613,14 @@ body:hover {
     /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
     /* 1em 为 浏览器字体大小 */
     transform: scale(85);
+  }
+}
+@media (max-width: 37.5em) {
+  .navigation__checkbox:checked ~ .navigation__background {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    transform: scale(44);
   }
 }
 .navigation__nav {
@@ -1639,7 +1649,7 @@ body:hover {
   transform: translate(-50%, -50%);
 }
 .navigation__item {
-  width: 100%;
+  width: max-content;
   text-align: left;
   display: block;
   margin: 2rem;

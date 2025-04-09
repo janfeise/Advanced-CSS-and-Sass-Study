@@ -49,6 +49,10 @@
     @include a.respond(tab-port) {
       transform: scale(85);
     }
+
+    @include a.respond(phone) {
+      transform: scale(44);
+    }
   }
 
   &__nav {
@@ -81,7 +85,7 @@
   }
 
   &__item {
-    width: 100%;
+    width: max-content;
     text-align: left;
     display: block;
     margin: 2rem;
