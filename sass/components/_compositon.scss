@@ -23,7 +23,7 @@
     }
 
     &-1 {
-      top: -2rem;
+      top: 4rem;
       left: 3rem;
 
       @include a.respond(tab-port) {
@@ -33,7 +33,7 @@
     }
 
     &-2 {
-      top: 6rem;
+      top: 11rem;
       left: 25rem;
 
       @include a.respond(tab-port) {
@@ -45,7 +45,7 @@
     }
 
     &-3 {
-      top: 14rem;
+      top: 22rem;
       left: 5rem;
 
       @include a.respond(tab-port) {

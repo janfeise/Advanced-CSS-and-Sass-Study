@@ -95,10 +95,11 @@
   letter-spacing: 0.7rem;
 }
 
-.paragraphy {
+.paragraph {
   font-size: a.$default-font-size;
+  line-height: 2;
 
   &:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }

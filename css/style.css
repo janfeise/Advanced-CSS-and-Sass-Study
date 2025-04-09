@@ -289,11 +289,12 @@ body:hover {
   letter-spacing: 0.7rem;
 }
 
-.paragraphy {
+.paragraph {
   font-size: 1.6rem;
+  line-height: 2;
 }
-.paragraphy:not(:last-child) {
-  margin-bottom: 2rem;
+.paragraph:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .u-center-text {
@@ -747,7 +748,7 @@ body:hover {
   }
 }
 .composition__photo-1 {
-  top: -2rem;
+  top: 4rem;
   left: 3rem;
   /* 横屏平板 */
   /* 特殊断点 */
@@ -763,7 +764,7 @@ body:hover {
   }
 }
 .composition__photo-2 {
-  top: 6rem;
+  top: 11rem;
   left: 25rem;
   /* 横屏平板 */
   /* 特殊断点 */
@@ -781,7 +782,7 @@ body:hover {
   }
 }
 .composition__photo-3 {
-  top: 14rem;
+  top: 22rem;
   left: 5rem;
   /* 横屏平板 */
   /* 特殊断点 */
