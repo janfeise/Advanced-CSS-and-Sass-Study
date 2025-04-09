@@ -1620,7 +1620,7 @@ body:hover {
     /* 手机：600px / font-size = 37.5 */
     /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
     /* 1em 为 浏览器字体大小 */
-    transform: scale(44);
+    transform: scale(68);
   }
 }
 .navigation__nav {
