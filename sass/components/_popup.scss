@@ -22,6 +22,7 @@
 
   &__content {
     width: 70%;
+
     border-radius: 5px;
     overflow: hidden;
     background-color: a.$color-white;
@@ -66,7 +67,6 @@
   }
 
   &__right {
-    width: 66.6666666%;
     display: table-cell;
     vertical-align: middle;
     padding: 2rem 5rem;
@@ -121,8 +121,9 @@
 
   &__text {
     font-size: 1.4rem;
+    text-align: left;
 
-    column-count: 2;
+    column-count: 1;
     column-gap: 3rem;
     column-rule: 2px solid a.$color-grey;
 

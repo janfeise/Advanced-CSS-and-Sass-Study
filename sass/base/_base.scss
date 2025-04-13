@@ -67,6 +67,10 @@ body {
   }
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 .text-selection {
   &::selection {
     color: a.$color-grey-light;

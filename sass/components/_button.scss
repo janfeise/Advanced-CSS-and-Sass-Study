@@ -14,6 +14,11 @@
     position: relative;
   }
 
+  & a {
+    text-decoration: none;
+    color: currentColor;
+  }
+
   &--white {
     background-color: a.$color-white;
     color: a.$color-grey-dark;
