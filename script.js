@@ -1,8 +1,5 @@
 "use strict";
 
-// Load environment variables
-require("dotenv").config();
-
 // 获取DOM元素
 const navItemEl = document.querySelectorAll(".navigation__item");
 const navToggleEl = document.getElementById("nav-toggle");
@@ -114,10 +111,8 @@ class CommentManager {
     this.comments = [];
     this.GITHUB_REPO = "janfeise/frontDevTuiTui";
     this.ISSUE_NUMBER = 3;
-    this.GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    if (!this.GITHUB_TOKEN) {
-      console.error("GitHub token not found in environment variables");
-    }
+    this.GITHUB_TOKEN =
+      "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"; // 这里需要替换为有效的token
     this.setupEventListeners();
     this.loadComments();
   }
