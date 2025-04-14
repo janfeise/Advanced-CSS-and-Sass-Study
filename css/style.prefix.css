@@ -1,0 +1,2211 @@
+@charset "UTF-8";
+/** 
+* 响应式设计：媒体查询
+*
+* 手机：width < 600px
+* 竖屏平板： width < 900px
+* 横屏平板： width < 1200px
+* normal 电脑： width < 1800px
+* 尺寸过大： width > 1800px
+*
+* 当用户改变浏览器的字体大小时：笔记本默认16px，如果放大为20px
+* 网站字体也应该跟着放大
+*/
+/* 变量定义 */
+/* 绿色 */
+/* 绿色 */
+/* 绿色 */
+/* 红色 */
+/* 蓝色 */
+/* 黄色 */
+/* 白色 */
+/* 黑色 */
+/* 图标线性渐变颜色 */
+/* 16px */
+/* 数值 */
+/* 边距 */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /** 
+  * 默认情况下 
+  * font-size: 100%  为 16px
+  * font-size: 62.5% 为 10px，作用是：1rem = 10px
+  * 示例：
+  *     - padding: 4rem; 即40px
+  */
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 尺寸太大 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  html {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    /* 竖屏平板：width < 1200px */
+    /* 竖屏平板：1rem = 9px */
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    /* 横屏平板： width < 900px */
+    /* 横屏平板：1rem = 8px */
+    font-size: 50%;
+  }
+}
+@media (max-width: 53.125rem) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    /* 手机：width < 600px */
+    /* 手机：1rem = 4.8px */
+    font-size: 34%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    /* 大尺寸：1800px / font-size = 112.5em */
+    /* 如果，用户将浏览器字体大小改变，那么 112.5em = 112.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    /* 大尺寸：width > 1800 */
+    /* 大尺寸：1rem = 12px */
+    font-size: 75%;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+body {
+  color: #777;
+  line-height: 1.7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 3rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  body {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0;
+  }
+}
+body:hover {
+  cursor: default;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.text-selection::-moz-selection {
+  color: #f7f7f7;
+}
+
+.text-selection::selection {
+  color: #f7f7f7;
+}
+.text-selection--alice::-moz-selection {
+  background: #ff6b6b;
+}
+.text-selection--alice::selection {
+  background: #ff6b6b;
+}
+.text-selection--primary::-moz-selection {
+  background: #55c57a;
+}
+.text-selection--primary::selection {
+  background: #55c57a;
+}
+.text-selection--roxy::-moz-selection {
+  background: #6a94d4;
+}
+.text-selection--roxy::selection {
+  background: #6a94d4;
+}
+
+/* 左侧滑入动画 */
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-5rem);
+            transform: translateX(-5rem);
+  }
+  80% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-5rem);
+            transform: translateX(-5rem);
+  }
+  80% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/* 右侧滑入动画 */
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  80% {
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  80% {
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/* Button滑入动画 */
+@-webkit-keyframes moveInButton {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2.5rem);
+            transform: translateY(2.5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2.5rem);
+            transform: translateY(2.5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+.heading-primary--main {
+  display: block;
+  font-family: "Zen Kurenaido";
+  font-size: 8rem;
+  font-weight: 400;
+  letter-spacing: 6rem;
+  /* 动画 */
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .heading-primary--main {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    letter-spacing: 1rem;
+    font-size: 6rem;
+  }
+}
+@media (max-width: 68.75em) {
+  .heading-primary--main {
+    letter-spacing: 4rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    letter-spacing: 2.5rem;
+  }
+}
+.heading-primary--sub {
+  display: block;
+  font-family: "Zen Kurenaido";
+  font-size: 3rem;
+  letter-spacing: 1.5rem;
+  margin-bottom: 6rem;
+  margin-right: 5rem; /* 不知道为什么没有对齐 */
+  /* 动画 */
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .heading-primary--sub {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    letter-spacing: 0.4rem;
+  }
+}
+@media (max-width: 68.75em) {
+  .heading-primary--sub {
+    font-size: 2.8rem;
+    letter-spacing: 1rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 2rem;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 3.3rem;
+  letter-spacing: 0.5rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f6c445), to(#d8434e));
+  background-image: linear-gradient(to right, #f6c445, #d8434e);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+.heading-secondary--green {
+  background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485)) !important;
+  background-image: linear-gradient(to right, #7ed56f, #28b485) !important;
+}
+.heading-secondary:hover {
+  cursor: default;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
+          transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.13);
+}
+.heading-secondary--large-letter-spacing {
+  letter-spacing: 3rem;
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.7rem;
+}
+
+.paragraphy {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+.paragraphy:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-med {
+  margin-bottom: 4rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .u-margin-bottom-med {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-bottom: 2rem !important;
+  }
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 8rem;
+}
+
+.u-margin-bottom-huge {
+  margin-bottom: 10rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .u-margin-bottom-huge {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-bottom: 5rem !important;
+  }
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .u-margin-top-huge {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: 18rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .u-margin-top-huge {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: 5rem !important;
+  }
+}
+
+.u-default-letter-spacing {
+  letter-spacing: 0.2rem;
+}
+
+.u-box-center {
+  margin: 0 auto;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: -1;
+}
+.bg-video__content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.btn, .btn:link, .btn:visited {
+  border-style: none;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  letter-spacing: 0.2rem;
+  position: relative;
+}
+.btn a {
+  text-decoration: none;
+  color: currentColor;
+}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+  font-size: 2rem;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+  font-size: 2rem;
+  font-family: "LXGW WenKai Mono TC", serif;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
+.btn--blue {
+  background-color: #6a94d4;
+  color: #fff;
+  font-size: 2rem;
+  font-family: "LXGW WenKai Mono TC", serif;
+}
+.btn--blue::after {
+  background-color: #6a94d4;
+}
+.btn:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+.btn:hover::after {
+  -webkit-transform: scaleX(1.5) scaleY(1.3);
+          transform: scaleX(1.5) scaleY(1.3);
+  opacity: 0;
+}
+.btn:active {
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+.btn--animted {
+  -webkit-animation-name: moveInButton;
+          animation-name: moveInButton;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.btn-text:link, .btn-text:visited {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-decoration: none;
+  padding: 4px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.btn-text:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn-text:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.btn-text--alice {
+  color: #d8434e;
+  border-bottom: 1px solid #d8434e;
+}
+.btn-text--alice:hover {
+  color: #fff;
+  background-color: #d8434e;
+}
+.btn-text--green {
+  color: #55c57a;
+  border-bottom: 1px solid #55c57a;
+}
+.btn-text--green:hover {
+  padding: 1rem;
+  color: #fff;
+  background-color: #28b485;
+}
+.btn-text--Orsted {
+  padding: 1rem;
+  color: #f6c445;
+  border-bottom: 1px solid #ffd700;
+}
+.btn-text--Orsted:hover {
+  color: #fff;
+  background-color: #f6c445;
+}
+.btn-text:link, .btn-text:visited .btn-text--OP-font-size {
+  font-size: 2rem;
+}
+
+.card {
+  /* 图片翻转 */
+  width: 100%;
+  height: 51rem;
+  position: relative;
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
+  /* front图片的样式设置 */
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.card__side {
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  height: 51rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+.card__side--front {
+  background-color: #fff;
+}
+.card__side--back {
+  background-color: green;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.card__side--back-1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff6b6b), to(#ad2a2a));
+  background-image: linear-gradient(to right bottom, #ff6b6b, #ad2a2a);
+}
+.card__side--back-2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.card__side--back-3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#6ec1e3), to(#6b79b3));
+  background-image: linear-gradient(to right bottom, #6ec1e3, #6b79b3);
+}
+.card:hover .card__side--front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+.card__picture {
+  width: 100%;
+  height: 23rem;
+  background-size: cover;
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .card__picture {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: 38rem;
+  }
+}
+.card__picture--1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff6b6b), to(#ad2a2a)), url("../../pic/images/艾莉丝/艾莉丝-2.jpg");
+  background-image: linear-gradient(to right bottom, #ff6b6b, #ad2a2a), url("../../pic/images/艾莉丝/艾莉丝-2.jpg");
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1); /* 添加镜像翻转 */
+}
+.card__picture--2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485)), url("../../pic/images/希露菲-3.jpg");
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../../pic/images/希露菲-3.jpg");
+  -webkit-transform: scaleX(-1) scale(1.1);
+          transform: scaleX(-1) scale(1.1); /* 添加镜像翻转 */
+}
+.card__picture--3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#6ec1e3), to(#6b79b3)), url("../../pic/images/洛琪希.jpg");
+  background-image: linear-gradient(to right bottom, #6ec1e3, #6b79b3), url("../../pic/images/洛琪希.jpg");
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1); /* 添加镜像翻转 */
+}
+.card__heading {
+  width: 75%;
+  text-align: right;
+  font-size: 2.5rem;
+  color: #fff;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .card__heading {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 27rem;
+  }
+}
+.card__heading-span {
+  font-family: "LXGW WenKai Mono TC", serif;
+  padding: 1rem 1.5rem;
+  -webkibox-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 107, 107, 0.85)), to(rgba(173, 42, 42, 0.85)));
+  background-image: linear-gradient(to right bottom, rgba(255, 107, 107, 0.85), rgba(173, 42, 42, 0.85));
+}
+.card__heading-span--2 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.85)), to(rgba(40, 180, 133, 0.85)));
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85));
+}
+.card__heading-span--3 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(110, 193, 227, 0.85)), to(rgba(107, 121, 179, 0.85)));
+  background-image: linear-gradient(to right bottom, rgba(110, 193, 227, 0.85), rgba(107, 121, 179, 0.85));
+}
+.card__listText {
+  padding: 1rem;
+}
+.card__listText ul {
+  list-style-type: none;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+}
+.card__listText ul li {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__listText ul li:not(:last-child) {
+  border-bottom: 0.2rem solid #eee;
+}
+.card__back-box {
+  width: 90%;
+  text-align: center;
+  font-family: "LXGW WenKai Mono TC", serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.card__back-content {
+  font-size: 2.3rem;
+  font-weight: 100;
+  letter-spacing: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+.card__back-content::first-line {
+  font-size: 3rem;
+  line-height: 1.8;
+}
+.card__action {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.card__action:hover .card__action-text {
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.card__action:hover .card__action-text-1 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff6b6b), to(#ad2a2a));
+  background-image: linear-gradient(to right, #ff6b6b, #ad2a2a);
+}
+.card__action:hover .card__action-text-2 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+}
+.card__action:hover .card__action-text-3 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#8a2be2), to(#1e90ff));
+  background-image: linear-gradient(to right, #8a2be2, #1e90ff);
+}
+@media (max-width: 56.25em) {
+  .card {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: auto;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  .card__side {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .card__side--back {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .card:hover .card__side--front {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  .card__back-box {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    padding: 10rem 4rem 5rem 5rem;
+  }
+  .card__action {
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  .card__action .card__action-text {
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+  }
+  .card__action .card__action-text-1 {
+    background-image: -webkit-gradient(linear, left top, right top, from(#ff6b6b), to(#ad2a2a));
+    background-image: linear-gradient(to right, #ff6b6b, #ad2a2a);
+  }
+  .card__action .card__action-text-2 {
+    background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+  }
+  .card__action .card__action-text-3 {
+    background-image: -webkit-gradient(linear, left top, right top, from(#8a2be2), to(#1e90ff));
+    background-image: linear-gradient(to right, #8a2be2, #1e90ff);
+  }
+}
+
+.composition {
+  position: relative;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin: 5rem;
+  }
+}
+.composition__photo {
+  width: 55%;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+  position: absolute;
+  z-index: 10;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  outline-offset: 2rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    float: left;
+    position: relative;
+    width: 33.33333%;
+  }
+}
+.composition__photo-1 {
+  top: 4rem;
+  left: 3rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo-1 {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 1rem;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.composition__photo-2 {
+  top: 11rem;
+  left: 25rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo-2 {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: -1rem;
+    left: 0;
+    z-index: 100;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+.composition__photo-3 {
+  top: 22rem;
+  left: 5rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .composition__photo-3 {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 1rem;
+    left: 0rem;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.composition__photo:hover {
+  z-index: 200;
+  cursor: pointer;
+  -webkit-transform: scale(1.1) translateY(-0.5rem);
+          transform: scale(1.1) translateY(-0.5rem);
+  -webkit-box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+  outline: 1rem solid #d8434e;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .composition__photo:hover {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    -webkit-transform: scale(1.2) translateY(-0.5rem);
+            transform: scale(1.2) translateY(-0.5rem);
+  }
+}
+.composition:hover .composition__photo:not(:hover) {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .composition:hover .composition__photo:not(:hover) {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+.feature-box {
+  font-size: 1.5rem;
+  padding: 3rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .feature-box {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 37.5em) {
+  .feature-box {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+.feature-box__icon {
+  font-size: 6rem;
+  display: inline-block;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a2be2), to(#1e90ff));
+  background-image: linear-gradient(to bottom, #8a2be2, #1e90ff);
+}
+.feature-box__text {
+  height: 15rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .feature-box__text {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0 10rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .feature-box__text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0 4rem;
+  }
+}
+.feature-box:hover {
+  -webkit-transform: translateY(-1.5rem) scale(1.03);
+          transform: translateY(-1.5rem) scale(1.03);
+  -webkit-box-shadow: 0 1rem 2em rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1rem 2em rgba(0, 0, 0, 0.4);
+}
+
+.feedback__bg {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 49.5%, transparent 50%), url("../../pic/images/德路迪亚村-白天.png");
+  background-size: cover;
+  height: 50rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .feedback__bg {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 100%, transparent 100%), url("../../pic/images/德路迪亚村-白天.png");
+  }
+}
+.feedback__login-box {
+  width: 50%;
+  padding: 6rem;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .feedback__login-box {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 100%;
+  }
+}
+
+.form__group {
+  font-size: 1.6rem;
+}
+.form__input {
+  border-style: none;
+  width: 90%;
+  height: 4rem;
+  padding: 1rem;
+  font-size: inherit;
+  background-color: rgba(255, 255, 255, 0.9) 5;
+  display: block;
+  border-radius: 2px;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form__input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #28b485;
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid #d8434e;
+}
+.form__input:autofill {
+  background-color: inherit;
+}
+.form__input:is(:-webkit-autofill, :autofill) {
+  background-color: white !important;
+}
+.form__label {
+  font-size: 1.5rem;
+  padding: 1rem;
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form__label:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__input:-moz-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__input:-ms-input-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+.form__input:focus + .form__label {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+}
+.form__radio-input {
+  display: none;
+}
+.form__radio-label {
+  position: relative;
+  padding-left: 4rem;
+}
+.form__radio-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: inline-block;
+  border: 5px solid #55c57a;
+  position: absolute;
+  left: 0;
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .form__radio-button {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    border-width: 3px;
+  }
+}
+.form__radio-button::after {
+  content: "";
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background-color: #55c57a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .form__radio-button::after {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 1rem;
+    height: 1rem;
+    border-width: 4px;
+  }
+}
+.form__radio-input:checked + .form__radio-label .form__radio-button::after {
+  opacity: 1;
+}
+
+.linear-gradient__text--gold {
+  color: #ffd700;
+}
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 6666;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.popup__cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 8888;
+}
+.popup__content {
+  width: 70%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 9999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.25);
+          transform: translate(-50%, -50%) scale(0.25);
+  -webkit-transition: all 0.5s 0.2s;
+  transition: all 0.5s 0.2s;
+  display: table;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.popup__content.scrolling-text {
+  width: 80vw;
+  height: 80vh;
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 53.125rem) {
+  .popup__content.scrolling-text {
+    width: 120vw;
+    height: 120vh;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__content.scrolling-text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 80vw;
+    height: 80vh;
+  }
+}
+@media (max-width: 75em) {
+  .popup__content {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    color: #333;
+  }
+}
+.popup__left {
+  width: 33.3333333%;
+  display: table-cell;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__left {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 100%;
+    display: block;
+  }
+}
+.popup__right {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 2rem 5rem;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.popup__right h2 {
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__right h2 {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__right h2 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding-top: 2rem;
+    font-size: 2rem;
+  }
+}
+.popup__right h3 {
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .popup__right h3 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding-top: 2rem;
+    font-size: 1.5rem;
+  }
+}
+.popup__right button {
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .popup__right button {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 75em) {
+  .popup__right {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+.popup__image {
+  width: 100%;
+  background-size: cover;
+  margin: 0;
+  display: block;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.popup__image:not(:last-child) {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+@media (max-width: 75em) {
+  .popup__image {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    opacity: 0.5;
+  }
+}
+.popup__text {
+  font-size: 1.4rem;
+  text-align: left;
+  -webkit-column-count: 1;
+     -moz-column-count: 1;
+          column-count: 1;
+  -webkit-column-gap: 3rem;
+     -moz-column-gap: 3rem;
+          column-gap: 3rem;
+  -webkit-column-rule: 2px solid #eee;
+     -moz-column-rule: 2px solid #eee;
+          column-rule: 2px solid #eee;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup__text {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    line-height: 2.5;
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 1rem;
+    line-height: 2.5;
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup:target .popup__content {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .popup:target .popup__content {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    -webkit-transform: translate(-50%, -50%) scale(0.7);
+            transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media (max-width: 68.75em) {
+  .popup:target .popup__content {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+@media (max-width: 37.5em) {
+  .popup:target .popup__content {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+.popup__close {
+  font-size: 4rem;
+  color: #777;
+  position: absolute;
+  top: -0.5rem;
+  right: 1.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .popup__close {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    color: #000;
+  }
+}
+@media (max-width: 37.5em) {
+  .popup__close {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 4.5rem;
+    top: -1.5rem;
+    right: 0.4rem;
+    color: #000;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.popup__close:link, .popup__close:visited {
+  list-style: none;
+  text-decoration: none;
+}
+.popup__close:hover {
+  color: #55c57a;
+}
+
+.scrolling-text {
+  -o-object-fit: contain;
+     object-fit: contain; /* 保证图片完整显示，自动留白 */
+}
+.scrolling-text__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../../pic/images/艾莉丝/艾莉丝-剑之圣地-原图.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../pic/images/艾莉丝/艾莉丝-剑之圣地-原图.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  z-index: -1;
+}
+.scrolling-text__details {
+  position: absolute;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none; /* Firefox 隐藏滚动条 */
+}
+.scrolling-text__paragraph {
+  font-size: 2rem;
+  color: #f7f7f7;
+  letter-spacing: 6px;
+  -webkit-filter: drop-shadow(0 0.5rem 2rem rgba(255, 255, 255, 0.9));
+          filter: drop-shadow(0 0.5rem 2rem rgba(255, 255, 255, 0.9));
+  padding: 0.5rem 1.5rem;
+  line-height: 2;
+  text-indent: 2em;
+}
+
+/* 隐藏关闭按钮 */
+.scrolling-text .popup__close {
+  visibility: hidden;
+}
+
+.story {
+  width: 60%;
+  margin: 0 auto;
+  padding: 5rem;
+  padding-left: 8rem;
+  border-radius: 0.3rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  -webkit-box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  font-family: serif;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-transform: skewX(-12deg);
+          transform: skewX(-12deg);
+}
+.story > * {
+  -webkit-transform: skewX(12deg);
+          transform: skewX(12deg);
+}
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  position: relative;
+  shape-outside: circle(47% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  -webkit-transform: translateX(-3rem) skewX(12deg);
+          transform: translateX(-3rem) skewX(12deg);
+}
+.story__img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.story__img--Orsted {
+  -webkit-transform: scale(2.2) translate(5%, 20%);
+          transform: scale(2.2) translate(5%, 20%);
+}
+.story__img--rudy {
+  -webkit-transform: scale(2) translate(-3%, 22%);
+          transform: scale(2) translate(-3%, 22%);
+}
+.story__text {
+  font-size: 1.5rem;
+}
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate(-50%, 20%);
+          transform: translate(-50%, 20%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.story__caption--Orsted {
+  color: #ffd700;
+}
+.story__caption--rudy {
+  color: #ffd700;
+}
+.story:hover .story__caption {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+.story:hover .story__img--Orsted {
+  -webkit-transform: scale(1.8) translate(5%, 20%);
+          transform: scale(1.8) translate(5%, 20%);
+  -webkit-filter: blur(3px) brightness(90%);
+          filter: blur(3px) brightness(90%);
+}
+.story:hover .story__img--rudy {
+  -webkit-transform: scale(1.7) translateY(20%);
+          transform: scale(1.7) translateY(20%);
+  -webkit-filter: blur(3px) brightness(80%);
+          filter: blur(3px) brightness(80%);
+}
+
+.orsted {
+  width: 300px;
+  float: right;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.footer {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #eee;
+  padding: 10rem 0;
+  background-color: #333;
+}
+.footer__log-box {
+  text-align: center;
+}
+.footer__log {
+  width: 20rem;
+  height: auto;
+}
+.footer__navigation {
+  border-top: 2px solid #777;
+  display: inline-block;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .footer__navigation {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    width: 80%;
+    margin-bottom: 3rem;
+  }
+}
+.footer__list {
+  list-style: none;
+  margin-top: 1rem;
+}
+.footer__item {
+  padding: 0 1rem;
+  display: inline-block;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+.footer__item:not(:last-child) {
+  margin-right: 2rem;
+}
+.footer__item:hover {
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(1.3) rotate(3deg);
+          transform: scale(1.3) rotate(3deg);
+}
+.footer__link {
+  text-decoration: none;
+  color: #eee;
+}
+.footer__link:hover {
+  color: #55c57a;
+}
+.footer__copyright {
+  width: 80%;
+  border-top: 2px solid #777;
+  display: inline-block;
+  padding-top: 1rem;
+  text-align: left;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .footer__copyright {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    text-align: center;
+  }
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row [class^=col-] {
+  float: left;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    float: none !important;
+    width: 100% !important;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 6rem * 2) / 3);
+}
+.row .col-2-of-3 {
+  width: calc((100% - 6rem * 2) / 3 * 2 + 6rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 6rem * 3) / 4);
+}
+.row .col-2-of-4 {
+  width: calc((100% - 6rem * 3) / 4 * 2 + 6rem);
+}
+.row .col-3-of-4 {
+  width: calc((100% - 6rem * 3) / 4 * 3 + 6rem * 2);
+}
+
+.header {
+  height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(216, 67, 78, 0.8)), color-stop(rgba(85, 197, 122, 0.8)), to(rgba(107, 121, 179, 0.8))), url("../pic/images/手游视觉.png");
+  background-image: linear-gradient(to right bottom, rgba(216, 67, 78, 0.8), rgba(85, 197, 122, 0.8), rgba(107, 121, 179, 0.8)), url("../pic/images/手游视觉.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .header {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+  }
+}
+@media (max-width: 37.5em) {
+  .header {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  }
+}
+.header__logo {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  height: 11rem;
+}
+.header__textContainer {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  color: #fff;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.navigation__checkbox {
+  display: none;
+}
+.navigation__button {
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 2000;
+  width: 7rem;
+  height: 7rem;
+  -webkit-box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__button {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 4rem;
+    right: 4rem;
+  }
+}
+.navigation__background {
+  width: 6rem;
+  height: 6rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  z-index: 1000;
+  -webkit-transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__background {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  -webkit-transform: scale(68);
+          transform: scale(68);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__checkbox:checked ~ .navigation__background {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    -webkit-transform: scale(85);
+            transform: scale(85);
+  }
+}
+@media (max-width: 37.5em) {
+  .navigation__checkbox:checked ~ .navigation__background {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    -webkit-transform: scale(68);
+            transform: scale(68);
+  }
+}
+.navigation__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  -webkit-transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+}
+.navigation__list {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.navigation__item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-align: left;
+  display: block;
+  margin: 2rem;
+}
+.navigation__link, .navigation__link:link, .navigation__link:active {
+  display: inline-block;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(120deg, transparent 50%, white 50%);
+  background-size: 230%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.navigation__link span, .navigation__link:link span, .navigation__link:active span {
+  margin-right: 2rem;
+}
+.navigation__link:hover {
+  color: #55c57a;
+  background-position: 100%;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+.navigation__icon {
+  display: block;
+  width: 3.2rem;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__icon {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: 1.5px;
+  }
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .navigation__icon::before, .navigation__icon::after {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    height: 1.5px;
+  }
+}
+.navigation__icon::before {
+  top: -1rem;
+}
+.navigation__icon::after {
+  top: 1rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1.2rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1.2rem;
+}
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon::before {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.navigation__checkbox:checked ~ .navigation__button .navigation__icon::after {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.navigation__link:target ~ .navigation__background {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.navigation__link:target ~ .navigation__nav {
+  opacity: 0;
+  width: 0;
+}
+
+.section--about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .section--about {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: -16rem;
+    padding: 22rem 0;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--about {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-top: -15vh;
+    padding: 28rem 0;
+  }
+}
+.section--about .paragraphy, .section--about h3 {
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 75em) {
+  .section--about .paragraphy, .section--about h3 {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding-left: 3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--about .paragraphy, .section--about h3 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 0 8rem 0 8rem;
+  }
+}
+.section--about .btn-text {
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .section--about .btn-text {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin-left: 3rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--about .btn-text {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    margin: 0 8rem 0 8rem;
+  }
+}
+
+.section--feature {
+  padding: 20rem 5rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(110, 193, 227, 0.8)), to(rgba(107, 121, 179, 0.8))), url("../../pic/images/魔大陆-夜晚.png");
+  background-image: linear-gradient(to right bottom, rgba(110, 193, 227, 0.8), rgba(107, 121, 179, 0.8)), url("../../pic/images/魔大陆-夜晚.png");
+  background-size: cover;
+  -webkit-transform: skewY(-7deg);
+          transform: skewY(-7deg);
+  margin-top: -9rem;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.section--feature > * {
+  -webkit-transform: skewY(7deg);
+          transform: skewY(7deg);
+}
+@media (max-width: 75em) {
+  .section--feature {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 15rem 1rem;
+  }
+}
+
+.section--detail {
+  margin-top: -9rem;
+  padding: 25rem 15rem 15rem 15rem;
+  background-color: #f7f7f7;
+  /* 竖屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+.section--detail h2 {
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .section--detail h2 {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 75em) {
+  .section--detail {
+    /* 竖屏平板2：1200px / font-size = 75 */
+    /* 如果，用户将浏览器字体大小改变，那么 75em = 75 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 20rem 1rem 8rem 1rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .section--detail {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 25rem 25rem 15rem 25rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .section--detail {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 20rem 13rem 4rem 13rem;
+  }
+}
+
+.section--stories {
+  padding: 15rem 0;
+  position: relative;
+}
+
+.section__feedback-login {
+  padding: 15rem 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  /* 横屏平板 */
+  /* 特殊断点 */
+  /* 特殊断点 */
+}
+@media (max-width: 56.25em) {
+  .section__feedback-login {
+    /* 横屏平板：900px / font-size = 56.25 */
+    /* 如果，用户将浏览器字体大小改变，那么 56.25em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    padding: 15rem 5rem;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyIsIi4uL3Nhc3MvYWJzdHJhY3RzL19taXhpbnMuc2NzcyIsIi4uL3Nhc3MvYWJzdHJhY3RzL192YXJpYWJsZXMuc2NzcyIsIi4uL3Nhc3MvYmFzZS9fYmFzZS5zY3NzIiwiLi4vc2Fzcy9iYXNlL19hbmltYXRpb25zLnNjc3MiLCIuLi9zYXNzL2Jhc2UvX3R5cG9ncmFwaHkuc2NzcyIsIi4uL3Nhc3MvYmFzZS9fdXRpbGl0aWVzLnNjc3MiLCIuLi9zYXNzL2NvbXBvbmVudHMvX2JnLXZpZGVvLnNjc3MiLCIuLi9zYXNzL2NvbXBvbmVudHMvX2J1dHRvbi5zY3NzIiwiLi4vc2Fzcy9jb21wb25lbnRzL19jYXJkLnNjc3MiLCIuLi9zYXNzL2NvbXBvbmVudHMvX2NvbXBvc2l0b24uc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fZmVhdHVyZS1ib3guc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fZmVlZGJhY2suc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fZm9ybS5zY3NzIiwiLi4vc2Fzcy9jb21wb25lbnRzL19saW5lYXItZ3JhZGllbnRfX3RleHQuc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fcG9wdXAuc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fc2Nyb2xsaW5nLXRleHQuc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fc3Rvcnkuc2NzcyIsIi4uL3Nhc3MvbGF5b3V0L19mb290ZXIuc2NzcyIsIi4uL3Nhc3MvbGF5b3V0L19ncmlkLnNjc3MiLCIuLi9zYXNzL2xheW91dC9faGVhZGVyLnNjc3MiLCIuLi9zYXNzL2xheW91dC9fbmF2aWdhdGlvbi5zY3NzIiwiLi4vc2Fzcy9wYWdlcy9faG9tZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQ1FoQjs7Ozs7Ozs7Ozs7Q0FBQTtBQ1JBLFNBQUE7QUFFK0IsT0FBQTtBQUNBLE9BQUE7QUFDRCxPQUFBO0FBR0gsT0FBQTtBQUtDLE9BQUE7QUFL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TUksZ0NBQUE7SUFDQSwyQ0FBQTtJQUNBLGtCQUFBO0lxQkRBLHNCQUFBO0V0Qml6REo7QUFDRjtBc0I5eURFO0VyQkdFLFNBQUE7RUE2QkYsU0FBQTtFQU9BLFNBQUE7RUFQQSxTQUFBO0VBT0EsU0FBQTtBRDh3REY7QUNqekRJO0VxQkpGO0lyQktJLG1DQUFBO0lBQ0EsNENBQUE7SUFDQSxrQkFBQTtJcUJMQSxpQkFBQTtFdEIwekRKO0FBQ0Y7QUNuMERJO0VxQk1GO0lyQkxJLGdDQUFBO0lBQ0EsMkNBQUE7SUFDQSxrQkFBQTtJcUJTQSxxQkFBQTtFdEI4ekRKO0FBQ0Y7O0FzQjF6REE7RUFDRSxtQkFBQTtFQUNBLG9LQUFBO0VBQUEsMElBQUE7RUFNQSxzQkFBQTtFQUNBLCtCQUFBO1VBQUEsdUJBQUE7RUFFQSxpQkFBQTtFckJURSxTQUFBO0VBbUJGLFNBQUE7RUFPQSxTQUFBO0FEeXlERjtBc0J4ekRFO0VBQ0UsOEJBQUE7VUFBQSxzQkFBQTtBdEIwekRKO0FDcjBESTtFcUJISjtJckJJTSxrQ0FBQTtJQUNBLHVDQUFBO0lBQ0Esa0JBQUE7SXFCWUYsbUJBQUE7RXRCNnpERjtBQUNGOztBc0IxekRBO0VBQ0UsaUJBQUE7RUFDQSxnQ0FBQTtFQUNBLHlCcEIxQ2lCO0VEbUJmLFNBQUE7RUFtQkYsU0FBQTtFQU9BLFNBQUE7RUFwQ0UsU0FBQTtFQTZCRixTQUFBO0VBT0EsU0FBQTtFQVBBLFNBQUE7RUFPQSxTQUFBO0FEazBERjtBc0JuMERFO0VyQk5BLFNBQUE7RUFPQSxTQUFBO0FEczBERjtBQ24zREk7RXFCNENGO0lyQjNDSSxnQ0FBQTtJQUNBLDJDQUFBO0lBQ0Esa0JBQUE7SXFCMkNBLGlCQUFBO0V0QjQwREo7QUFDRjtBQ3YyREk7RXFCbUJKO0lyQmxCTSxrQ0FBQTtJQUNBLHVDQUFBO0lBQ0Esa0JBQUE7SXFCNEJGLDZCQUFBO0V0QiswREY7QUFDRjtBQ3ozREk7RXFCNkJKO0lyQjVCTSxtQ0FBQTtJQUNBLDRDQUFBO0lBQ0Esa0JBQUE7SXFCMENGLGdDQUFBO0V0Qm0xREY7QUFDRjtBQzM0REk7RXFCdUNKO0lyQnRDTSxnQ0FBQTtJQUNBLDJDQUFBO0lBQ0Esa0JBQUE7SXFCd0RGLCtCQUFBO0V0QnUxREY7QUFDRjs7QXNCcDFEQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7QXRCdTFERjs7QXNCcDFEQTtFQUNFLGdCQUFBO0VBQ0EsOEZBQUE7RUFBQSxvRUFBQTtFckI3REUsU0FBQTtFQTZCRixTQUFBO0VBT0EsU0FBQTtBRG0zREY7QUN0NURJO0VxQjBESjtJckJ6RE0sbUNBQUE7SUFDQSw0Q0FBQTtJQUNBLGtCQUFBO0lxQmdFRixtQkFBQTtFdEIwMURGO0FBQ0YiLCJmaWxlIjoic3R5bGUucHJlZml4LmNzcyJ9 */

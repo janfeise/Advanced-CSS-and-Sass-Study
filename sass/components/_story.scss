@@ -81,16 +81,98 @@
   }
 }
 
-.story {
-  margin: 0 auto;
-  padding: 5rem;
-  padding-left: 8rem;
-  border-radius: 0.3rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  box-shadow: 0 3rem 6rem rgba($color: a.$color-black, $alpha: 0.1);
-  font-family: serif;
-}
+// .story {
+//   margin: 0 auto;
+//   padding: 5rem 15rem;
+//   // padding-left: 8rem;
+//   border-radius: 0.3rem;
+//   font-size: 1.6rem;
+//   font-weight: 700;
+//   box-shadow: 0 3rem 6rem rgba($color: a.$color-black, $alpha: 0.1);
+//   font-family: serif;
+
+//   &__shape {
+//     width: 20rem;
+//     height: 20rem;
+//     float: left;
+//     position: relative;
+//     shape-outside: circle(47% at 50% 50%);
+//     clip-path: circle(50% at 50% 50%);
+//     margin-right: 1rem;
+//     transform: translateX(-3rem);
+//   }
+
+//   &__text {
+//     font-size: 2rem;
+//     letter-spacing: 3px;
+//   }
+
+//   &__img {
+//     width: 100%;
+//     height: 100%;
+//     transition: all 0.5s;
+
+//     &--Orsted {
+//       transform: scale(2.2) translate(5%, 20%);
+//     }
+
+//     &--rudy {
+//       transform: scale(2) translate(-3%, 22%);
+//     }
+//   }
+
+//   &__img-body {
+//     height: 50rem;
+
+//     shape-outside: url("../../pic/images/Rudeus_Greyrat_Adult.png");
+//     margin-left: 1rem;
+
+//     &--orsted {
+//       float: right;
+//       transform: scaleX(-1);
+//     }
+
+//     &--ludy {
+//       float: left;
+//       padding-left: -5rem;
+//     }
+//   }
+
+//   &__caption {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     width: max-content;
+//     color: a.$color-white;
+//     text-align: center;
+//     opacity: 0;
+//     transform: translate(-50%, 20%);
+//     transition: all 0.5s;
+
+//     &--Orsted {
+//       color: a.$color-rudy-light;
+//     }
+
+//     &--rudy {
+//       color: a.$color-rudy-light;
+//     }
+//   }
+
+//   &:hover &__caption {
+//     opacity: 1;
+//     transform: translate(-50%, -50%) scale(1);
+//   }
+
+//   &:hover &__img--Orsted {
+//     transform: scale(1.8) translate(5%, 20%);
+//     filter: blur(3px) brightness(90%);
+//   }
+
+//   &:hover &__img--rudy {
+//     transform: scale(1.7) translateY(20%);
+//     filter: blur(3px) brightness(80%);
+//   }
+// }
 
 .orsted {
   width: 300px;

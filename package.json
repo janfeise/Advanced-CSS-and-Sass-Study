@@ -4,12 +4,19 @@
   "description": "css学习，并制作无职转生静态网站",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass ./sass/main.scss ./css/style.css -w"
+    "compile:sass": "sass ./sass/main.scss ./css/style.css",
+    "prefix:css": "postcss ./css/style.css --use autoprefixer -o ./css/style.prefix.css",
+    "build:css": "npm run compile:sass && npm run prefix:css"
   },
-  "author": "Tilex",
-  "license": "ISC",
-  "dependencies": {
-    "font-carrier": "^0.3.1",
-    "sass": "^1.83.4"
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "IE 10"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.62.1"
   }
 }

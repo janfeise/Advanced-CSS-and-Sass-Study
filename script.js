@@ -94,3 +94,228 @@ const popCloseReuseScroll = function (i) {
 };
 
 loopEl(popCloseEl, popCloseReuseScroll);
+
+// 评论数据结构
+class Comment {
+  constructor(name, content, rating, timestamp) {
+    this.name = name;
+    this.content = content;
+    this.rating = rating;
+    this.timestamp = timestamp;
+  }
+}
+
+// 评论管理类
+class CommentManager {
+  constructor() {
+    this.comments = [];
+    this.GITHUB_REPO = "janfeise/frontDevTuiTui";
+    this.ISSUE_NUMBER = 3;
+    this.GITHUB_TOKEN =
+      "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"; // 这里需要替换为有效的token
+    this.setupEventListeners();
+    this.loadComments();
+  }
+
+  // 从GitHub Issues加载评论
+  async loadComments() {
+    try {
+      const response = await fetch(
+        `https://api.github.com/repos/${this.GITHUB_REPO}/issues/${this.ISSUE_NUMBER}/comments`,
+        {
+          headers: {
+            Authorization: `Bearer ${this.GITHUB_TOKEN}`,
+            Accept: "application/vnd.github.v3+json",
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`Failed to fetch comments: ${response.status}`);
+      }
+      const comments = await response.json();
+
+      this.comments = comments
+        .map((comment) => {
+          try {
+            const data = JSON.parse(comment.body);
+            return new Comment(
+              data.name,
+              data.content,
+              data.rating,
+              data.timestamp
+            );
+          } catch (e) {
+            console.error("Failed to parse comment:", e);
+            return null;
+          }
+        })
+        .filter((comment) => comment !== null);
+
+      this.renderComments();
+    } catch (error) {
+      console.error("Failed to load comments:", error);
+      this.loadFromLocalStorage();
+    }
+  }
+
+  // 从localStorage加载评论（备用方案）
+  loadFromLocalStorage() {
+    const savedComments = localStorage.getItem("comments");
+    this.comments = savedComments ? JSON.parse(savedComments) : [];
+    this.renderComments();
+  }
+
+  // 保存评论到GitHub Issues
+  async saveComment(comment) {
+    try {
+      console.log("Attempting to save comment to GitHub...");
+      const url = `https://api.github.com/repos/${this.GITHUB_REPO}/issues/${this.ISSUE_NUMBER}/comments`;
+      console.log("Request URL:", url);
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${this.GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+          Accept: "application/vnd.github.v3+json",
+        },
+        body: JSON.stringify({
+          body: JSON.stringify(comment),
+        }),
+      });
+
+      const responseData = await response.json();
+      console.log("GitHub API Response:", responseData);
+
+      if (!response.ok) {
+        throw new Error(
+          `GitHub API Error: ${response.status} - ${
+            responseData.message || "Unknown error"
+          }`
+        );
+      }
+
+      console.log("Comment saved successfully to GitHub");
+      // 同时保存到localStorage作为备份
+      this.saveToLocalStorage();
+    } catch (error) {
+      console.error("Detailed save error:", error);
+      // 如果API保存失败，只保存到localStorage
+      this.saveToLocalStorage();
+      // 显示更详细的错误提示
+      alert(
+        `评论保存到GitHub失败：${error.message}\n已暂存在本地。请稍后再试！`
+      );
+    }
+  }
+
+  // 保存到localStorage（备用方案）
+  saveToLocalStorage() {
+    localStorage.setItem("comments", JSON.stringify(this.comments));
+  }
+
+  // 添加新评论
+  async addComment(name, content, rating) {
+    const comment = new Comment(
+      name,
+      content,
+      rating,
+      new Date().toISOString()
+    );
+
+    // 先添加到本地列表并渲染
+    this.comments.unshift(comment);
+    this.renderComments();
+
+    // 异步保存到GitHub
+    try {
+      await this.saveComment(comment);
+    } catch (error) {
+      console.error("Failed to sync comment:", error);
+    }
+  }
+
+  // 设置事件监听器
+  setupEventListeners() {
+    const form = document.getElementById("commentForm");
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const content = document.getElementById("comment").value;
+        const rating = document.querySelector(
+          'input[name="rating"]:checked'
+        ).value;
+
+        if (name && content) {
+          // 显示提交中的状态
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = "发布中...";
+          submitBtn.disabled = true;
+
+          try {
+            await this.addComment(name, content, rating);
+            form.reset();
+          } finally {
+            // 恢复按钮状态
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          }
+        }
+      });
+    }
+
+    // 添加自动刷新功能
+    setInterval(() => this.loadComments(), 30000); // 每30秒刷新一次评论
+  }
+
+  // 获取评分星星HTML
+  getStarRating(rating) {
+    return "★".repeat(rating) + "☆".repeat(5 - rating);
+  }
+
+  // 格式化时间
+  formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleString("zh-CN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
+  // 渲染评论列表
+  renderComments() {
+    const commentsList = document.getElementById("commentsList");
+    if (!commentsList) return;
+
+    commentsList.innerHTML = this.comments
+      .map(
+        (comment) => `
+        <div class="comment-item">
+          <div class="comment-header">
+            <span class="comment-author">${comment.name}</span>
+            <span class="comment-rating">${this.getStarRating(
+              comment.rating
+            )}</span>
+          </div>
+          <div class="comment-content">${comment.content}</div>
+          <div class="comment-footer">
+            <span class="comment-time">${this.formatDate(
+              comment.timestamp
+            )}</span>
+          </div>
+        </div>
+      `
+      )
+      .join("");
+  }
+}
+
+// 初始化评论管理器
+document.addEventListener("DOMContentLoaded", () => {
+  new CommentManager();
+});
