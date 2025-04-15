@@ -308,3 +308,15 @@ class CommentManager {
 document.addEventListener("DOMContentLoaded", () => {
   new CommentManager();
 });
+
+// 加载项
+// 正确处理加载动画和禁用滚轮
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".load-wrap");
+  loader.classList.add("fade-out");
+
+  // 可选：完全移除 DOM
+  setTimeout(() => {
+    loader.remove();
+  }, 600);
+});
