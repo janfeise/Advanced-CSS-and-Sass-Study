@@ -111,24 +111,18 @@ class CommentManager {
     this.comments = [];
     this.GITHUB_REPO = "janfeise/frontDevTuiTui";
     this.ISSUE_NUMBER = 3;
-    this.GITHUB_TOKEN =
-      "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"; // 这里需要替换为有效的token
+    this.PROXY_BASE_URL = "https://tight-paper-c4dd.xiaquan233.workers.dev";
     this.setupEventListeners();
     this.loadComments();
   }
 
-  // 从GitHub Issues加载评论
+  // 从代理服务器加载评论
   async loadComments() {
     try {
       const response = await fetch(
-        `https://api.github.com/repos/${this.GITHUB_REPO}/issues/${this.ISSUE_NUMBER}/comments`,
-        {
-          headers: {
-            Authorization: `Bearer ${this.GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-        }
+        `${this.PROXY_BASE_URL}/?path=/repos/${this.GITHUB_REPO}/issues/${this.ISSUE_NUMBER}/comments`
       );
+
       if (!response.ok) {
         throw new Error(`Failed to fetch comments: ${response.status}`);
       }
@@ -165,19 +159,16 @@ class CommentManager {
     this.renderComments();
   }
 
-  // 保存评论到GitHub Issues
+  // 通过代理保存评论
   async saveComment(comment) {
     try {
-      console.log("Attempting to save comment to GitHub...");
-      const url = `https://api.github.com/repos/${this.GITHUB_REPO}/issues/${this.ISSUE_NUMBER}/comments`;
-      console.log("Request URL:", url);
+      console.log("Attempting to save comment through proxy...");
+      const url = `${this.PROXY_BASE_URL}/?path=/repos/${this.GITHUB_REPO}/issues/${this.ISSUE_NUMBER}/comments`;
 
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${this.GITHUB_TOKEN}`,
           "Content-Type": "application/json",
-          Accept: "application/vnd.github.v3+json",
         },
         body: JSON.stringify({
           body: JSON.stringify(comment),
@@ -185,17 +176,17 @@ class CommentManager {
       });
 
       const responseData = await response.json();
-      console.log("GitHub API Response:", responseData);
+      console.log("Proxy API Response:", responseData);
 
       if (!response.ok) {
         throw new Error(
-          `GitHub API Error: ${response.status} - ${
+          `API Error: ${response.status} - ${
             responseData.message || "Unknown error"
           }`
         );
       }
 
-      console.log("Comment saved successfully to GitHub");
+      console.log("Comment saved successfully");
       // 同时保存到localStorage作为备份
       this.saveToLocalStorage();
     } catch (error) {
@@ -203,9 +194,7 @@ class CommentManager {
       // 如果API保存失败，只保存到localStorage
       this.saveToLocalStorage();
       // 显示更详细的错误提示
-      alert(
-        `评论保存到GitHub失败：${error.message}\n已暂存在本地。请稍后再试！`
-      );
+      alert(`评论保存失败：${error.message}\n已暂存在本地。请稍后再试！`);
     }
   }
 
