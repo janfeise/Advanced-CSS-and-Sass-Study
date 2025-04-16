@@ -6,6 +6,8 @@ const navToggleEl = document.getElementById("nav-toggle");
 const popEl = document.querySelectorAll(".popup__cover");
 const popCloseEl = document.querySelectorAll(".popup__close");
 const btnModal = document.querySelectorAll(".btn-modal");
+const images = document.querySelectorAll("img");
+const videos = document.querySelectorAll("video");
 
 /**
  * 初始化
@@ -319,4 +321,27 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     loader.remove();
   }, 600);
+});
+
+// 图片懒加载
+const callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const image = entry.target;
+      const data_src = image.getAttribute("data-src");
+      image.setAttribute("src", data_src);
+      observer.unobserve(image);
+    }
+  });
+};
+
+const observer = new IntersectionObserver(callback);
+
+images.forEach((image) => {
+  observer.observe(image);
+});
+
+// 视频懒加载
+videos.forEach((video) => {
+  observer.observe(video);
 });
