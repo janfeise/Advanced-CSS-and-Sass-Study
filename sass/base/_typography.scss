@@ -63,6 +63,7 @@
     a.$color-rudy-yellow,
     a.$color-alice-red
   );
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   position: relative;

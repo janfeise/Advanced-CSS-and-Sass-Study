@@ -2,7 +2,7 @@
 
 [在线预览](https://iridescent-longma-92ff0e.netlify.app/)
 
-css学习
+css 学习
 
 课程：[Advanced CSS and Sass: Flexbox, Grid, Animations and More!](https://www.udemy.com/course/advanced-css-and-sass/?couponCode=V2JPLETSLEARN)
 

@@ -1,0 +1,70 @@
+/* 评论区样式 */
+.form__input--textarea {
+  height: 5rem;
+  padding: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.comments-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.comments-list {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.comment-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.comment-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.comment-author {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #55c57a;
+}
+
+.comment-rating {
+  color: #ffd700;
+  font-size: 1.4rem;
+}
+
+.comment-content {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.comment-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-time {
+  font-size: 1.2rem;
+  color: #999;
+}
