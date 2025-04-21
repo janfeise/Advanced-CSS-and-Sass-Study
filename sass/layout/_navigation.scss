@@ -84,7 +84,7 @@
     transform: translate(-50%, -50%);
 
     @include a.respond(phone) {
-      margin-top: -5rem;
+      margin-top: -12rem;
     }
   }
 

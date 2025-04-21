@@ -655,6 +655,7 @@ h3 {
   transition: all 0.3s ease-in;
 }
 .card__action:hover .card__action-text {
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
@@ -1877,7 +1878,7 @@ h3 {
     /* 手机：600px / font-size = 37.5 */
     /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
     /* 1em 为 浏览器字体大小 */
-    margin-top: -5rem;
+    margin-top: -12rem;
   }
 }
 .navigation__item {
