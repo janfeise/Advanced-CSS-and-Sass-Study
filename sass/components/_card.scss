@@ -264,6 +264,7 @@
       transition: all 0.3s ease-in;
 
       & &-text {
+        -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }

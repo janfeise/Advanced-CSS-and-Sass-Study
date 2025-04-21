@@ -707,6 +707,7 @@ h3 {
     transition: all 0.3s ease-in;
   }
   .card__action .card__action-text {
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
