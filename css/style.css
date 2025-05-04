@@ -1154,10 +1154,20 @@ h3 {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.25);
   transition: all 0.5s 0.2s;
+  /* 特殊断点 */
+  /* 特殊断点 */
   display: table;
   /* 竖屏平板 */
   /* 特殊断点 */
   /* 特殊断点 */
+}
+@media (max-width: 37.5em) {
+  .popup__content {
+    /* 手机：600px / font-size = 37.5 */
+    /* 如果，用户将浏览器字体大小改变，那么 37.5em = 37.5 * 1em */
+    /* 1em 为 浏览器字体大小 */
+    top: 45%;
+  }
 }
 .popup__content.scrolling-text {
   width: 80vw;

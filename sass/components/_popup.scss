@@ -34,6 +34,10 @@
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
 
+    @include a.respond(phone) {
+      top: 45%;
+    }
+
     display: table;
 
     &.scrolling-text {
