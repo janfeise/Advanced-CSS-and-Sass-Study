@@ -113,7 +113,7 @@ class CommentManager {
     this.comments = [];
     this.GITHUB_REPO = "janfeise/frontDevTuiTui";
     this.ISSUE_NUMBER = 3;
-    this.PROXY_BASE_URL = "https://tight-paper-c4dd.xiaquan233.workers.dev";
+    this.PROXY_BASE_URL = "https://www.tilex233.me/";
     this.setupEventListeners();
     this.loadComments();
   }
