@@ -1,0 +1,30 @@
+@use "../abstracts/" as a;
+
+.group {
+  &__title {
+    padding: 2rem 2rem 1rem 2rem;
+    color: a.$color-grey-dark-1;
+    font-size: a.$default-font-size;
+    font-weight: bold;
+  }
+
+  &__detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    color: a.$color-grey-dark;
+    font-size: a.$default-font-size;
+  }
+
+  &__img {
+    margin: 2rem 0 5rem 0;
+    width: 50%;
+    border-radius: 5px;
+    // height: 20rem;
+  }
+}

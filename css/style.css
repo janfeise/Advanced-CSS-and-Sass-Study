@@ -1121,6 +1121,29 @@ h3 {
   opacity: 1;
 }
 
+.group__title {
+  padding: 2rem 2rem 1rem 2rem;
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.group__detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.group__name {
+  color: #777;
+  font-size: 1.6rem;
+}
+.group__img {
+  margin: 2rem 0 5rem 0;
+  width: 50%;
+  border-radius: 5px;
+}
+
 .linear-gradient__text--gold {
   color: #ffd700;
 }
@@ -1156,7 +1179,6 @@ h3 {
   transition: all 0.5s 0.2s;
   /* 特殊断点 */
   /* 特殊断点 */
-  display: table;
   /* 竖屏平板 */
   /* 特殊断点 */
   /* 特殊断点 */
@@ -1199,6 +1221,9 @@ h3 {
     /* 1em 为 浏览器字体大小 */
     color: #333;
   }
+}
+.popup__contact {
+  width: 50%;
 }
 .popup__left {
   width: 33.3333333%;

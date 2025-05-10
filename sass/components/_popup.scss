@@ -38,7 +38,7 @@
       top: 45%;
     }
 
-    display: table;
+    // display: table;
 
     &.scrolling-text {
       width: 80vw;
@@ -58,6 +58,10 @@
     @include a.respond(tab-land) {
       color: a.$color-grey-dark-1;
     }
+  }
+
+  &__contact {
+    width: 50%;
   }
 
   &__left {
